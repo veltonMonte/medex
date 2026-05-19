@@ -1,0 +1,227 @@
+/* Layout Principal */
+.layout-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #ffffff;
+    border-right: 1px solid #dadce0;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-nav { display: flex; flex-direction: column; }
+.menu-item { padding: 12px 24px; text-decoration: none; color: #3c4043; font-size: 14px; }
+.menu-item.active { background-color: #e8f0fe; color: #1a73e8; border-radius: 0 20px 20px 0; margin-right: 10px; }
+
+.main-content { flex: 1; overflow-y: auto; }
+
+.top-bar {
+    height: 64px;
+    background: #fff;
+    border-bottom: 1px solid #dadce0;
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+}
+
+/* Cabeçalho Ajustado - Botão para Direita */
+.content { padding: 32px; }
+
+.content-header {
+    display: flex;
+    flex-direction: row; /* Coloca os itens lado a lado */
+    justify-content: space-between; /* Empurra o texto para a esquerda e o botão para a direita */
+    align-items: center; /* Alinha verticalmente no centro */
+    margin-bottom: 30px;
+}
+
+.content-header h1 { font-size: 28px; font-weight: 500; color: #202124; margin: 0; }
+.sub-header { color: #5f6368; font-size: 14px; margin-top: 4px; }
+
+/* Botão Novo Paciente */
+.btn-primary {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(60,64,67,0.3);
+}
+
+.btn-primary:hover { background-color: #1557b0; }
+
+/* Tabela */
+.table-responsive { background: white; border-radius: 8px; border: 1px solid #dadce0; }
+table { width: 100%; border-collapse: collapse; }
+th { padding: 12px 16px; text-align: left; font-size: 12px; color: #5f6368; border-bottom: 1px solid #dadce0; }
+td { padding: 16px; border-bottom: 1px solid #f1f3f4; }
+
+.nome-paciente { font-weight: 500; color: #1a73e8; cursor: pointer; }
+.nome-paciente:hover { text-decoration: underline; }
+
+/* =========================================
+   Cores do Status (Ativo / Desativo)
+   ========================================= */
+.badge-status {
+    padding: 6px 12px;
+    border-radius: 12px; /* Deixa com formato de "pílula" */
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-ativo {
+    background-color: #e6f4ea; /* Fundo verde claro */
+    color: #1e8e3e; /* Texto verde escuro */
+}
+
+.status-desativo {
+    background-color: #fce8e6; /* Fundo vermelho claro */
+    color: #d93025; /* Texto vermelho escuro */
+}
+
+/* Ações e Popover */
+.action-cell { position: relative; width: 60px; text-align: center; }
+.btn-dots { background: none; border: none; cursor: pointer; color: #5f6368; font-size: 20px; padding: 8px; border-radius: 50%; }
+.btn-dots:hover { background-color: #f1f3f4; }
+
+.action-popover {
+    display: none;
+    position: absolute;
+    right: 45px;
+    top: 5px;
+    background: white;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 100;
+    min-width: 140px;
+}
+
+.action-popover.show { display: block; }
+.action-popover button { display: block; width: 100%; padding: 10px 16px; text-align: left; background: none; border: none; cursor: pointer; font-size: 14px; }
+.action-popover button:hover { background-color: #f8f9fa; }
+.action-popover button.text-danger { color: #d93025; }
+
+/* Textos de Identificação */
+.id-text { font-size: 12px; color: #70757a; }
+.cpf-text { font-size: 11px; color: #80868b; }
+
+
+/* =========================================
+   ESTRUTURA DO MODAL DE CADASTRO
+   ========================================= */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro atrás do modal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-form-container {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.modal-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #f1f3f4;
+    padding-bottom: 12px;
+}
+
+.modal-form-header h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #202124;
+}
+
+.btn-fechar-modal {
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #5f6368;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-fechar-modal:hover {
+    color: #d93025;
+}
+
+/* Campos do Formulário */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-row {
+    display: flex;
+    gap: 16px;
+}
+
+.form-group.half {
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #5f6368;
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #dadce0;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #202124;
+    outline: none;
+    transition: 0.2s;
+    box-sizing: border-box;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
+
+.modal-acoes {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #f1f3f4;
+}
+
+.btn-salvar {
+    background: #1a73e8;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-salvar:hover {
+    background: #1557b0;
+}

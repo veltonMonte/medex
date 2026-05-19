@@ -1,0 +1,61 @@
+### Passo 1: Lista de Personas Potenciais
+
+* **Médico Plantonista / Especialista**
+    * **Contexto de uso:** Interage com o sistema majoritariamente para evolução clínica, prescrição de medicamentos e alta médica. Precisa de extrema velocidade entre um atendimento e outro.
+    * **Importância estratégica:** Principal (Core user). É a persona com maior poder de rejeição ou aceitação da usabilidade do sistema.
+
+* **Enfermeiro Assistencial**
+    * **Contexto de uso:** Interage com o sistema para checagem de prescrições, anotações de enfermagem e checklists de alta. Usa a plataforma de forma contínua durante todo o turno.
+    * **Importância estratégica:** Principal. É quem mais consome os dados gerados pelo médico e depende da clareza visual para evitar erros na administração de medicamentos.
+
+* **Recepcionista de Admissão / Triagem**
+    * **Contexto de uso:** Primeiro contato com o sistema. Realiza o cadastro inicial do paciente e classificação de prioridade com o paciente aguardando em pé ou na fila.
+    * **Importância estratégica:** Secundária. Fundamental para a entrada correta de dados e fluidez da fila de espera.
+
+* **Analista de Suporte de TI / Administrador**
+    * **Contexto de uso:** Usa o módulo de Gestão de Acesso. Cria usuários, define permissões e monitora a estabilidade. Interage menos com os módulos clínicos.
+    * **Importância estratégica:** Influenciadora (Buyer-Enabler). É o defensor técnico do sistema perante a diretoria, pois se beneficia diretamente da redução de chamados e problemas de infraestrutura.
+
+---
+
+### Passo 2: Proto-personas
+
+#### 1. Proto-persona: Médico
+* **Nome e título representativo:** Dr. Carlos, o Médico Plantonista Sobrecarregado
+* **Dados contextuais:** 35 anos, Médico Emergencista/UTI, trabalha em múltiplos hospitais, altamente digitalizado no uso pessoal (usa Google Workspace, bancos digitais), mas lida com sistemas arcaicos no trabalho.
+* **Comportamentos / hábitos:** Digita rápido, baseia-se em padrões mentais para prescrições rotineiras, tenta usar atalhos sempre que possível. Fica impaciente com travamentos de tela.
+* **Necessidades e objetivos (Goals):** Registrar o histórico do paciente e emitir a prescrição no menor tempo possível (JTBD: "Prescrever rápido para atender o próximo sem perder a segurança clínica").
+* **Dores / frustrações (Pains):** Ter que dar 15 cliques para prescrever uma Dipirona; sistema fechando no meio da evolução; telas poluídas que o obrigam a "caçar" informações básicas.
+* **Motivações / ganhos (Gains):** Sair do plantão no horário; interface visualmente limpa e familiar (como um e-mail); atalhos de teclado e busca inteligente (*Smart Chips*).
+* **Canais e ferramentas:** WhatsApp, aplicativos de decisão médica (ex: Whitebook), Gmail.
+* **Frase representativa:** "Eu estudei seis anos para cuidar de pacientes, não para brigar com o computador."
+
+#### 2. Proto-persona: Enfermeiro
+* **Nome e título representativo:** Juliana, a Enfermeira Multi-tarefas
+* **Dados contextuais:** 30 anos, Enfermeira de Posto/Ala, responsável por dezenas de leitos simultaneamente, ambiente de trabalho dinâmico e com constantes interrupções.
+* **Comportamentos / hábitos:** Usa listas de verificação constantemente, precisa bater o olho na tela e entender o status de todos os pacientes da sua ala.
+* **Necessidades e objetivos (Goals):** Ter uma visão clara, segura e livre de ambiguidades sobre o que precisa ser administrado, checado ou preparado para a alta do paciente.
+* **Dores / frustrações (Pains):** Prescrições médicas confusas na tela; processos de alta de enfermagem burocráticos que exigem abrir várias abas pesadas; lentidão no carregamento das listas de pacientes.
+* **Motivações / ganhos (Gains):** Visualização em cards e checklists interativos fáceis de marcar; segurança na transição do cuidado; fim de turno sem pendências no sistema.
+* **Canais e ferramentas:** Instagram, grupos de transição de turno (WhatsApp), ferramentas simples de lista (Trello, Google Tasks).
+* **Frase representativa:** "Preciso bater o olho na tela e saber exatamente o que o leito 12 precisa agora, sem abrir 5 janelas diferentes."
+
+#### 3. Proto-persona: Recepção
+* **Nome e título representativo:** Roberto, o Recepcionista Ágil
+* **Dados contextuais:** 24 anos, Recepcionista de Pronto Atendimento, lida diretamente com o público (frequentemente estressado ou com dor), precisa de extrema velocidade de digitação.
+* **Comportamentos / hábitos:** Navega usando a tecla "Tab", raramente pega no mouse se puder evitar, lida com pressão e barulho do ambiente.
+* **Necessidades e objetivos (Goals):** Inserir os dados demográficos e de triagem do paciente em menos de 1 minuto para não gerar filas.
+* **Dores / frustrações (Pains):** Formulários gigantes com campos irrelevantes obrigatórios; sistema que trava no meio do cadastro e obriga a digitar tudo de novo.
+* **Motivações / ganhos (Gains):** Telas de admissão enxutas como "adicionar novo contato"; navegação 100% via teclado; busca universal rápida pelo CPF ou nome.
+* **Canais e ferramentas:** Navegadores Web, redes sociais, sistemas de chamados simples.
+* **Frase representativa:** "A fila está enorme e as pessoas estão com dor, meu sistema precisa ser tão rápido quanto eu digito."
+
+#### 4. Proto-persona: TI
+* **Nome e título representativo:** Fernando, o Analista de TI "Apagador de Incêndios"
+* **Dados contextuais:** 28 anos, Analista de Suporte do Hospital, responsável por manter dezenas de computadores operacionais nas estações de enfermagem e consultórios.
+* **Comportamentos / hábitos:** Passa o dia acessando máquinas remotamente para resolver problemas do CentBrowser, atualizar o LAS ou destravar sessões "presas" de médicos.
+* **Necessidades e objetivos (Goals):** Reduzir o volume de chamados (tickets) de suporte relacionados a problemas de infraestrutura de software e acessos.
+* **Dores / frustrações (Pains):** Dependência de softwares legados que exigem instalações locais máquina por máquina; médicos ligando furiosos de madrugada porque o sistema travou.
+* **Motivações / ganhos (Gains):** Sistema agnóstico de navegador (roda nativo no Chrome/Edge); arquitetura leve na nuvem; painel de gestão de acessos simples onde ele resolve permissões em três cliques.
+* **Canais e ferramentas:** Jira/Zendesk, Slack, fóruns de tecnologia, painéis AWS/Cloud.
+* **Frase representativa:** "Meu sonho é um sistema que rode direto no navegador padrão, sem eu precisar instalar nenhum plugin nas 200 máquinas do hospital."

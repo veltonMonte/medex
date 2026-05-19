@@ -1,0 +1,189 @@
+@import '../TelaPaciente/TelaPacientes.css';
+
+/* Grid Layout: Fila Esquerda | Formulário Direita */
+.triagem-grid {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 24px;
+    align-items: start;
+    height: calc(100vh - 128px);
+}
+
+/* =========================================
+   Coluna Esquerda: Fila
+   ========================================= */
+.fila-container {
+    background: white;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.fila-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #dadce0;
+    background: #f8f9fa;
+}
+
+.fila-header h2 { font-size: 16px; color: #202124; margin: 0; }
+.badge-contador { background: #e8f0fe; color: #1a73e8; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 12px; }
+
+.lista-pacientes {
+    overflow-y: auto;
+    flex: 1;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card-paciente-fila {
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    padding: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+    background: white;
+}
+
+.card-paciente-fila:hover { border-color: #1a73e8; background: #f8fbff; }
+.card-paciente-fila.selecionado { border-color: #1a73e8; background: #e8f0fe; box-shadow: inset 4px 0 0 #1a73e8; }
+
+.paciente-info-principal { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.paciente-info-principal h3 { font-size: 15px; color: #202124; margin: 0; }
+.paciente-info-principal span { font-size: 12px; color: #5f6368; }
+
+.paciente-motivo { font-size: 13px; color: #3c4043; display: flex; align-items: flex-start; gap: 6px; margin-bottom: 12px; line-height: 1.4; }
+.icon-motivo { color: #ea4335; margin-top: 2px; flex-shrink: 0; }
+
+.paciente-chegada { font-size: 11px; color: #80868b; display: flex; align-items: center; gap: 4px; font-weight: 500;}
+
+/* =========================================
+   Coluna Direita: Formulário
+   ========================================= */
+.formulario-triagem-container {
+    background: white;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.estado-vazio-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #5f6368;
+    text-align: center;
+    padding: 40px;
+}
+.icone-gigante { font-size: 64px; margin-bottom: 16px; color: #dadce0; }
+.estado-vazio-form h3 { color: #202124; margin-bottom: 8px; font-size: 18px; }
+
+.form-conteudo { padding: 24px; display: flex; flex-direction: column; height: 100%; }
+
+.form-header { border-bottom: 1px solid #f1f3f4; padding-bottom: 16px; margin-bottom: 24px; }
+.form-header h2 { font-size: 20px; color: #202124; margin-bottom: 4px; }
+.form-header p { font-size: 14px; color: #5f6368; }
+
+.sinais-vitais-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.input-group { display: flex; flex-direction: column; gap: 6px; }
+.full-width { grid-column: span 2; }
+.input-group label { font-size: 13px; font-weight: 600; color: #3c4043; display: flex; align-items: center; gap: 6px; }
+
+.input-group input[type="text"], 
+.input-group input[type="number"], 
+.input-group textarea {
+    border: 1px solid #dadce0;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+    font-family: inherit;
+}
+.input-group input:focus, .input-group textarea:focus { border-color: #1a73e8; }
+
+.range-labels { display: flex; justify-content: space-between; font-size: 12px; color: #5f6368; margin-top: 4px; }
+
+/* Protocolo de Manchester */
+.secao-manchester {
+    margin-top: 32px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #dadce0;
+}
+
+.secao-manchester h3 { font-size: 14px; color: #202124; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.paleta-cores { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.cor-btn {
+    flex: 1;
+    min-width: 100px;
+    padding: 12px 8px;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    opacity: 0.6;
+}
+
+.cor-btn:hover { opacity: 0.8; transform: translateY(-2px); }
+.cor-btn.ativo { opacity: 1; border-color: #202124; transform: scale(1.05); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+
+/* Cores Oficiais do Protocolo */
+.cor-vermelho { background-color: #d93025; }
+.cor-laranja { background-color: #f29900; }
+.cor-amarelo { background-color: #fbbc04; color: #202124; } /* Texto preto no amarelo para leitura */
+.cor-verde { background-color: #1e8e3e; }
+.cor-azul { background-color: #1a73e8; }
+
+.form-footer { margin-top: auto; padding-top: 32px; display: flex; justify-content: flex-end; }
+
+.btn-salvar-triagem {
+    background: #1a73e8; color: white; border: none; padding: 12px 24px; border-radius: 6px;
+    font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 8px; cursor: pointer; transition: 0.2s;
+}
+.btn-salvar-triagem:hover { background: #1557b0; }
+
+/* Botão de Fechar Paciente */
+.btn-fechar-paciente {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #5f6368;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+    margin-top: -4px; /* Pequeno ajuste fino de alinhamento */
+}
+
+.btn-fechar-paciente:hover {
+    background-color: #fce8e6;
+    color: #d93025;
+}

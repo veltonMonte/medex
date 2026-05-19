@@ -1,0 +1,140 @@
+.painel-tv-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f8f9fa; /* Fundo claro padrão do FortalMed */
+    color: #202124; /* Texto escuro para alto contraste */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+/* Barra lateral de Histórico (Esquerda) */
+.tv-historico {
+    width: 350px;
+    background-color: #ffffff; /* Fundo branco */
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #dadce0; /* Borda padrão */
+}
+
+.tv-logo-area {
+    padding: 30px;
+    background-color: white;
+    text-align: center;
+    border-bottom: 1px solid #f1f3f4;
+}
+
+.tv-historico h2 {
+    font-size: 18px;
+    color: #1a73e8; /* Azul principal */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 20px 30px 10px 30px;
+    margin: 0;
+    font-weight: 700;
+}
+
+.lista-ultimas-chamadas {
+    flex: 1;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.item-historico {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #dadce0;
+    border-left: 4px solid #1a73e8; /* Destaque lateral azul */
+}
+
+.hist-nome {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #202124;
+    margin-bottom: 5px;
+}
+
+.hist-local {
+    font-size: 14px;
+    color: #5f6368;
+    font-weight: 500;
+}
+
+.hist-vazio { color: #8d99ae; font-style: italic; }
+
+.tv-rodape-info {
+    padding: 20px 30px;
+    background: #f1f3f4; /* Cinza bem clarinho */
+    text-align: center;
+    color: #5f6368;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Área Principal da Chamada Atual (Direita) */
+.tv-chamada-principal {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.chamada-destaque {
+    text-align: center;
+    animation: fadeIn 0.5s ease-in;
+    width: 100%;
+    padding: 50px;
+}
+
+.chamada-destaque.vazia { opacity: 0.8; }
+.chamada-destaque.vazia h1 { font-size: 36px; color: #3c4043; margin-bottom: 10px;}
+.chamada-destaque.vazia p { font-size: 20px; color: #5f6368;}
+
+.label-chamando {
+    font-size: 28px;
+    color: #5f6368;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.nome-paciente-tv {
+    font-size: 100px; /* Gigante para ler de longe */
+    font-weight: 900;
+    margin: 0 0 40px 0;
+    line-height: 1.1;
+    color: #202124; /* Nome bem escuro */
+}
+
+.destino-tv {
+    display: inline-flex;
+    flex-direction: column;
+    background: #1a73e8; /* Fundo azul principal */
+    color: white; /* Letra branca para contrastar com o azul */
+    padding: 20px 80px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(26, 115, 232, 0.25);
+}
+
+.sala-tv { font-size: 48px; font-weight: bold; margin-bottom: 5px; }
+.medico-tv { font-size: 24px; font-weight: 500; opacity: 0.9; }
+
+/* Efeito de piscar a tela CLARO quando chama alguém */
+.alerta-piscar {
+    animation: piscarFundo 1s infinite alternate;
+}
+
+@keyframes piscarFundo {
+    0% { background-color: #f8f9fa; }
+    100% { background-color: #e8f0fe; } /* Fica piscando para um azul bem clarinho */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

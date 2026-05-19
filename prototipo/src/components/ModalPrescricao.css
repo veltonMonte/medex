@@ -1,0 +1,132 @@
+/* Fundo escuro sobre a tela */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease; /* Efeito suave ao abrir */
+}
+
+.prescricao-modal {
+    background: white;
+    width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    animation: scaleIn 0.2s ease; /* Efeito de zoom rápido */
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid #dadce0;
+}
+
+.modal-header h2 { font-size: 18px; color: #202124; display: flex; align-items: center; gap: 8px; margin: 0; }
+.btn-close-modal { background: none; border: none; font-size: 20px; color: #5f6368; cursor: pointer; transition: 0.2s; }
+.btn-close-modal:hover { color: #d93025; }
+
+.modal-body { padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+
+/* Busca */
+.busca-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    padding: 10px 16px;
+    transition: 0.2s;
+}
+.busca-container:focus-within { border-color: #1a73e8; box-shadow: 0 0 0 2px rgba(26,115,232,0.2); }
+.busca-icon { color: #5f6368; margin-right: 12px; font-size: 18px; }
+.input-busca-med { border: none; outline: none; width: 100%; font-size: 14px; font-family: inherit; }
+
+/* Dropdown */
+.sugestoes-lista {
+    background: white;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    max-height: 150px;
+    overflow-y: auto;
+    margin-top: -10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+.sugestao-item {
+    padding: 10px 16px;
+    font-size: 13px;
+    color: #3c4043;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.sugestao-item:hover { background: #f8f9fa; color: #1a73e8; }
+
+/* Smart Chips */
+.smart-chips-area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-height: 60px;
+    padding: 16px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px dashed #dadce0; /* Adicionado um tracejado sutil para marcar a área */
+}
+
+.texto-vazio { color: #80868b; font-size: 13px; margin: auto; }
+
+.smart-chip {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+    border: 1px solid #d2e3fc;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    animation: scaleIn 0.2s ease; /* Animação ao criar um novo chip */
+}
+
+.smart-chip button {
+    background: none; border: none; color: #1a73e8; cursor: pointer; font-size: 14px;
+    display: flex; align-items: center; justify-content: center; padding: 0;
+}
+.smart-chip button:hover { color: #1557b0; }
+
+/* Chip de Alergia (UX bônus) */
+.chip-perigo { background-color: #fce8e6; color: #d93025; border-color: #fad2cf; }
+.chip-perigo button { color: #d93025; }
+.chip-perigo button:hover { color: #b31412; }
+
+.alerta-bloqueio { background: #fce8e6; color: #d93025; padding: 12px; border-radius: 8px; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+
+/* ATUALIZADO: Rodapé do Modal com espaço para o atalho e para os botões */
+.modal-footer {
+    display: flex; 
+    justify-content: space-between; /* Mantém o atalho na esquerda e os botões na direita */
+    align-items: center;
+    padding: 16px 24px; 
+    border-top: 1px solid #dadce0; 
+    background: #f8f9fa; 
+    border-radius: 0 0 12px 12px;
+}
+
+.btn-cancelar { background: none; border: none; color: #5f6368; font-weight: 500; cursor: pointer; padding: 8px 16px; transition: 0.2s; }
+.btn-cancelar:hover { background: #f1f3f4; border-radius: 6px; }
+
+.btn-salvar-prescricao { background: #1a73e8; color: white; border: none; border-radius: 6px; padding: 8px 24px; font-weight: 500; cursor: pointer; transition: 0.2s; }
+.btn-salvar-prescricao:hover:not(:disabled) { background: #1557b0; }
+.btn-salvar-prescricao:disabled { background: #dadce0; cursor: not-allowed; }
+
+/* Keyframes para animações suaves */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes scaleIn { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }

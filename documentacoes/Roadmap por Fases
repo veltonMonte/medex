@@ -1,0 +1,44 @@
+Roadmap por Fases
+
+Fase 1 – Validação do Problema e Prototipagem (Mês 1 a 2)
+Foco Estratégico: Validar a proposta de valor de usabilidade "Gmail-like" com os usuários finais (Médicos, Enfermeiros e Recepção) antes do desenvolvimento profundo.
+Entregas Principais:
+Criação de protótipos de alta fidelidade no Figma para os módulos principais (Admissão, Prescrição e Alta).
+Testes de usabilidade remotos e presenciais simulando fluxos de trabalho lineares e uso de atalhos de teclado.
+Entrevistas com a equipe de TI para validar os requisitos de arquitetura cloud e independência de navegador.
+Métricas de Validação: Tempo de conclusão de tarefa no protótipo (Time on Task), Taxa de sucesso na primeira tentativa, System Usability Scale (SUS) inicial.
+
+Fase 2 – MVP (Minimum Viable Product): O Núcleo do Atendimento (Mês 3 a 5)
+Foco Estratégico: Lançar a base funcional do sistema, permitindo o fluxo completo do paciente de ponta a ponta (entrada, atendimento e saída) com a nova experiência.
+Entregas Principais:
+Módulo de Gestão de Acesso simplificado (Cadastro de Usuários e Perfis).
+Módulo de Admissão/Recepção (Cadastro rápido de dados demográficos e triagem).
+Módulo de Prescrição Médica V1 (Interface de thread, Smart Chips para medicamentos básicos, campo de evolução clínica).
+Infraestrutura Cloud inicial operando nos principais navegadores modernos.
+Métricas de Validação: Tempo médio de admissão por paciente, Número de cliques para emitir uma prescrição padrão, Uptime do sistema.
+
+Fase 3 – Expansão do Cuidado e Transição Segura (Mês 6 a 8)
+Foco Estratégico: Incorporar as rotinas de enfermagem e garantir a segurança na transição do cuidado e nas altas, fechando o ciclo de valor clínico.
+Entregas Principais:
+Módulo de Checagem de Prescrição e Anotações de Enfermagem (visão em cards/listas).
+Módulo de Alta Médica (Painel de resumo consolidado em tela única).
+Módulo de Alta de Enfermagem (Checklists interativos de transição de leito).
+Implementação de busca universal avançada (pacientes, prontuários, leitos).
+Métricas de Validação: Redução no tempo de preenchimento de checklists de alta, Taxa de adoção do sistema por enfermeiros, Redução de chamados de suporte técnico (TI).
+
+Fase 4 – Otimização de Produtividade e Escalabilidade (Mês 9 a 12)
+Foco Estratégico: Refinar a velocidade de uso com base em dados reais e preparar a arquitetura para suportar o volume de dados de um hospital de médio/grande porte.
+Entregas Principais:
+Expansão massiva da biblioteca de Smart Chips (protocolos clínicos, calculadoras médicas integradas).
+Aprimoramento dos atalhos de teclado (navegação mouseless completa para recepção e médicos).
+Otimização de performance (redução do tempo de carregamento de páginas pesadas).
+Dashboard gerencial básico (indicadores de lotação e tempo médio de atendimento).
+Métricas de Validação: Tempo de carregamento da página (Page Load Time) sob estresse, Net Promoter Score (NPS) por segmento de usuário, Taxa de retenção de usuários ativos diários (DAU).
+
+Fase 5 – Consolidação e Abertura do Ecossistema (Ano 2)
+Foco Estratégico: Posicionar o FortalMed como a plataforma central do hospital, integrando-se com serviços essenciais sem perder a leveza e a usabilidade.
+Entregas Principais:
+APIs de integração com sistemas legados de retaguarda (ERP financeiro/faturamento) e laboratórios (LIS).
+Módulo de prescrição de exames complexos com visualização de resultados integrada.
+Aplicativo complementar ou interface mobile-first para visualização rápida de evoluções na beira do leito.
+Métricas de Validação: Número de integrações ativas via API, Crescimento da base de usuários (novos setores/hospitais), Cost to Serve (custo de infraestrutura por usuário).

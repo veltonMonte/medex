@@ -1,0 +1,5 @@
+Segmentos de clientes para o produto:
+* Médicos
+* Enfermeiros
+* Equipe de Recepção e Atendimento
+* Equipe de TI e Administradores do Sistema

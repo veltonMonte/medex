@@ -1,0 +1,8 @@
+Visão do Produto
+**Para** médicos, enfermeiros, equipes de recepção e administradores de TI
+**Que** perdem tempo precioso de atendimento brigando com telas engessadas, enfrentam lentidão crônica, excesso de cliques e dependem de configurações locais complexas
+**O** FortalMed
+**Que** devolve o tempo dos profissionais para o cuidado direto com o paciente, eliminando o atrito tecnológico na rotina hospitalar
+**É um** Sistema de Gestão Hospitalar (PEP/HIS) 100% web
+**Diferente de** sistemas legados e burocráticos como o MV, que exigem instalações pesadas, navegadores específicos (como o CentBrowser) e possuem uma curva de aprendizado exaustiva
+**O nosso produto** opera de forma leve e agnóstica em qualquer navegador, garantindo produtividade máxima através de uma usabilidade intuitiva inspirada no Gmail, navegação por atalhos de teclado e componentes visuais de resposta rápida.

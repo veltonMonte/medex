@@ -1,0 +1,105 @@
+1. História de Usuário Touchpoints: Tela Inicial (Barra de Busca Universal) (Narrativa):
+• Como Roberto, o Recepcionista Ágil
+• Eu quero acessar uma barra de busca universal proeminente na tela inicial que receba foco automático ou seja ativada por um atalho rápido de teclado (como a tecla "/")
+• Para buscar o histórico de pacientes pelo CPF ou nome em segundos e iniciar a admissão operando o sistema sem a necessidade de usar o mouse.
+
+2. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• **Título da Tela:** Recepção - Pronto Atendimento
+• **Subtítulo:** Fila de Admissão Atual
+• **Estrutura Visual Esperada (Otimizada para Dispositivo Móvel e Uso de Teclado):**
+  • **Header Fixo (Topo):** Design minimalista contendo apenas a logo do sistema à esquerda e o menu de perfil do usuário à direita.
+  • **Componente Central (Hero Search):** Uma barra de pesquisa robusta e de alto contraste ocupando a área principal superior da tela.
+  • **Comportamento do Input:** Possui foco automático (auto-focus) assim que a tela carrega. O *placeholder* indica claramente a ação e o atalho: "Buscar CPF ou Nome... (Pressione '/')".
+  • **Dropdown Dinâmico (Auto-complete):** Ao digitar, uma lista suspensa sugere resultados instantâneos navegáveis pelas setas direcionais do teclado. Se o paciente não for encontrado, a primeira opção navegável torna-se " + Cadastrar Novo Paciente [Enter]".
+  • **Corpo da Tela (Abaixo da Busca):** Uma lista clara e escaneável com os pacientes já aguardando triagem, estruturada em *cards* ou linhas largas (Nome, Tempo de Espera, Status).
+
+3. Critérios de Aceitação (BDD — Behavior Driven Development):
+• Dado que acesso a Tela Inicial do sistema e a fila da recepção é carregada
+• Quando pressiono a tecla "/" para focar na barra de busca universal e digito o CPF de um paciente que acabou de chegar
+• E pressiono a tecla "Enter" para confirmar a pesquisa
+• Então o sistema deve exibir os dados do paciente existente para confirmação ou, caso seja um paciente inédito, abrir o Modal Sobreposto de Novo Paciente imediatamente, mantendo minhas mãos no teclado para continuar a tabulação.
+
+4. História de Usuário Touchpoints: Modal Sobreposto de Novo Paciente (Acionado via atalho) (Narrativa):
+• Como Roberto, o Recepcionista Ágil
+• Eu quero abrir um modal sobreposto instantâneo focado apenas nos dados essenciais de cadastro, acionado diretamente por um atalho de teclado
+• Para cadastrar dados demográficos e de triagem rapidamente, operando o sistema de forma enxuta e sem uso excessivo do mouse, garantindo o atendimento em menos de 1 minuto.
+
+5. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• **Título do Modal:** Nova Admissão
+• **Subtítulo:** Dados Essenciais do Paciente
+• **Estrutura Visual Esperada (Otimizada para Mobile/Responsivo):**
+  • **Comportamento do Modal:** Aparece instantaneamente sobre a tela atual (Overlay central no desktop ou Bottom Sheet no mobile), escurecendo o fundo levemente para focar a atenção, sem redirecionar a página.
+  • **Header Fixo:** Ícone de "X" no canto superior direito indicando o atalho "Esc" para fechar.
+  • **Corpo do Formulário (Estilo "Novo Contato"):** Minimalista, contendo apenas campos estritamente necessários com ordem de tabulação (Tab Index) sequencial lógica:
+    1. **CPF:** Input numérico com máscara automática.
+    2. **Nome Completo:** Input de texto simples.
+    3. **Data de Nascimento:** Input numérico curto (DD/MM/AAAA).
+    4. **Telefone:** Input com máscara automática.
+    5. **Queixa Principal/Motivo:** Input de texto curto focado na triagem inicial.
+  • **Rodapé Fixo:** Botão primário largo, de alto contraste (ex: azul ou verde), com a label "Concluir Admissão" e um indicador visual de atalho "[Enter]".
+
+6. Critérios de Aceitação (BDD — Behavior Driven Development):
+• Dado que o paciente não foi encontrado na busca universal e utilizo o atalho de teclado (ex: Alt+N) para nova admissão
+• Quando o modal sobreposto se abre já com o foco automático no primeiro campo (CPF) e preencho os dados do paciente navegando exclusivamente pela tecla "Tab"
+• E pressiono a tecla "Enter" estando no último campo ou focado no botão principal de confirmar
+• Então o sistema deve processar o cadastro em background, fechar o modal suavemente e exibir um aviso de sucesso na tela inicial, adicionando o paciente ao topo da fila instantaneamente.
+
+7. História de Usuário Touchpoints: Navegação de Campos via 'Tab' (Narrativa):
+• Como Roberto, o Recepcionista Ágil
+• Eu quero navegar de forma fluida e sequencial por todos os campos do formulário de admissão utilizando exclusivamente a tecla "Tab"
+• Para cadastrar dados demográficos e de triagem rapidamente, operando o sistema sem uso excessivo do mouse e garantindo que o atendimento ocorra em menos de 1 minuto.
+
+8. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• **Título/Área:** Comportamento de Foco no Formulário de Admissão
+• **Estrutura Visual Esperada (Otimizada para Dispositivo Móvel e Uso de Teclado):**
+  • **Ordem Lógica (Tab Index Rigoroso):** A transição do foco deve seguir estritamente a ordem de preenchimento (ex: CPF → Nome → Nascimento → Queixa → Botão Confirmar), de cima para baixo, sem saltar para elementos secundários (como links ou botões de fechar) fora do momento adequado.
+  • **Estado de Foco Evidente (Active/Focus State):** O campo que está atualmente recebendo os dados deve apresentar um contorno (outline) de alto contraste (ex: borda azul ou verde de 2px de espessura com leve brilho), deixando visualmente inconfundível onde o cursor está.
+  • **Auto-seleção de Texto:** Ao usar o "Tab" para entrar em um campo que já possua algum dado (ex: um sobrenome pré-carregado), o texto inteiro deve ser automaticamente destacado/selecionado, permitindo a sobrescrita imediata sem exigir o uso de "Backspace" ou cliques.
+  • **Máscaras Dinâmicas Não-Bloqueantes:** A formatação de CPF e telefones ocorre em tempo real durante a digitação, garantindo que o acionamento do "Tab" logo após o último número não cause engasgos na transição de campo.
+
+9. Critérios de Aceitação (BDD — Behavior Driven Development):
+• Dado que o formulário de admissão está aberto e o foco inicial (cursor piscando) está no primeiro campo do cadastro
+• Quando preencho os dados demográficos e pressiono a tecla "Tab" sucessivamente para avançar
+• E alcanço o botão primário de "Confirmar Admissão" ao final do fluxo
+• Então o sistema deve mover o foco visual entre os campos instantaneamente e sem falhas, aplicando um destaque nítido na área ativa, permitindo a finalização do processo apenas pressionando a tecla "Enter", mantendo minhas duas mãos no teclado o tempo todo.
+
+10. História de Usuário Touchpoints: Botão de Confirmar Admissão. (Narrativa):
+• Como Roberto, o Recepcionista Ágil
+• Eu quero um botão principal de confirmação ao final do formulário que seja acionado instantaneamente pela tecla "Enter" e que previna envios duplicados
+• Para concluir a admissão do paciente em frações de segundo, sem precisar alcançar o mouse, garantindo que o próximo da fila seja atendido sem atrasos ou travamentos no sistema.
+
+11. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• **Título/Área:** Rodapé do Formulário de Admissão
+• **Estrutura Visual Esperada (Otimizada para Dispositivo Móvel e Uso de Teclado):**
+  • **Posicionamento (Sticky/Inline):** No mobile, o botão deve ficar fixado na base da tela (Sticky Footer) para fácil alcance do polegar. No desktop, deve ser o último elemento lógico após o último campo de texto, respeitando a ordem natural de tabulação.
+  • **Design do Botão (Call to Action):** Ocupa 100% da largura disponível no mobile (ou possui grande destaque central no desktop). Cor sólida de alto contraste (ex: verde de sucesso ou azul primário do sistema) com cantos levemente arredondados.
+  • **Label e Atalho:** O texto deve ser direto e orientado à ação: "Confirmar Admissão". Ao lado do texto, deve haver uma tag visual sutil informando o atalho "[Enter]" para reforçar o hábito de navegação *mouseless*.
+  • **Estado de Processamento (Loading State):** Para evitar frustrações com travamentos, ao ser acionado, o botão deve substituir seu texto por um *spinner* (ícone de carregamento) e desabilitar cliques adicionais (Double-click prevention), evitando que o recepcionista envie o mesmo paciente duas vezes na pressa.
+
+12. Critérios de Aceitação (BDD — Behavior Driven Development):
+• Dado que preenchi os dados obrigatórios de triagem e o foco do teclado está no último campo preenchido (ou no próprio botão)
+• Quando pressiono a tecla "Enter" (ou toco no botão via dispositivo móvel)
+• E o sistema processa os dados validando o cadastro em background
+• Então o botão deve exibir um status visual de carregamento rápido, bloqueando novos cliques, e em seguida limpar todo o formulário instantaneamente, exibindo uma notificação verde (Toast message) de "Admissão Concluída" e devolvendo o foco automático para a barra de busca inicial, pronto para o próximo paciente.
+
+13. História de Usuário (Narrativa):
+• Como Roberto, o Recepcionista Ágil
+• Eu quero uma tela de login de carregamento ultrarrápido, com foco automático (auto-focus) no campo de usuário e suporte total à submissão via teclado
+• Para autenticar meu acesso em segundos ao iniciar o plantão ou após um bloqueio de inatividade, garantindo que eu esteja com o sistema pronto para cadastrar pacientes demográficos e de triagem rapidamente, sem gerar filas na emergência.
+
+14. Detalhes da Tela Touchpoint Login (Informações na tela e Protótipo Conceitual):
+• **Título da Tela:** Logo do FortalMed (em destaque, centralizado)
+• **Subtítulo:** Recepção e Triagem - Insira suas credenciais.
+• **Estrutura Visual Esperada (Otimizada para Dispositivo Móvel e Uso de Teclado):**
+  • **Layout de Alta Performance:** Fundo sólido (branco ou cinza muito claro), completamente livre de imagens de background pesadas ou animações. O objetivo é que a tela carregue em milissegundos, mesmo em computadores ou redes lentas do hospital.
+  • **Campo 1 (Usuário/Matrícula):** Input de texto com *auto-focus* acionado nativamente. Assim que a tela é renderizada, o cursor já deve estar piscando neste campo, pronto para digitação. Suporte a *auto-fill* do navegador/sistema.
+  • **Campo 2 (Senha):** Input de senha posicionado logo abaixo. A transição do usuário para a senha deve ser perfeitamente fluida ao pressionar a tecla "Tab".
+  • **Opção de Persistência:** Checkbox "Manter conectado durante o plantão", acessível via tecla "Tab" e selecionável com a "Barra de Espaço", reduzindo a necessidade de re-logins sob pressão.
+  • **Botão Primário (Call to Action):** Botão largo (100% da largura útil no mobile), com cor primária de alto contraste. Texto: "Acessar Sistema". Deve conter um indicador visual sutil do atalho de submissão, como "[Enter]".
+  • **Ordem de Tabulação (Tab Index):** Rigorosamente configurada: Usuário -> Senha -> Checkbox -> Botão Acessar. Links secundários (como "Esqueci a senha") devem ficar fora do fluxo principal de tabulação ou no final absoluto, para evitar que Roberto perca o foco na pressa.
+
+15. Critérios de Aceitação (BDD — Behavior Driven Development):
+• Dado que chego para o meu plantão na emergência e abro o link de acesso ao sistema
+• Quando a tela carrega instantaneamente com o foco já ativado no campo "Usuário", e eu digito minhas credenciais utilizando apenas a tecla "Tab" para alternar entre os campos
+• E pressiono a tecla "Enter" no teclado para submeter as informações
+• Então o sistema deve validar meu acesso em background e me redirecionar em menos de 1 segundo diretamente para a Tela Inicial de admissão (com o foco já na barra de busca universal), sem exibir modais de aviso ou painéis administrativos que exijam o clique do mouse para fechar.

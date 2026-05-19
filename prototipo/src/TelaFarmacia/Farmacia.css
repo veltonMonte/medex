@@ -1,0 +1,197 @@
+@import '../TelaPaciente/TelaPacientes.css'; /* Puxa o layout base do sistema */
+
+.farmacia-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Coluna de pendências maior que o histórico */
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.farmacia-header-secao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f1f3f4;
+    padding-bottom: 10px;
+}
+
+.farmacia-header-secao h2 {
+    font-size: 20px;
+    color: #202124;
+    margin: 0;
+}
+
+.badge-contador {
+    background: #e8f0fe;
+    color: #1a73e8;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* CARDS DE PRESCRIÇÃO */
+.cards-prescricao-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card-prescricao {
+    background: white;
+    border: 1px solid #dadce0;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.prescricao-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.rx-paciente {
+    margin: 0 0 4px 0;
+    font-size: 18px;
+    color: #202124;
+}
+
+.rx-meta {
+    font-size: 13px;
+    color: #5f6368;
+}
+
+.rx-badges {
+    display: flex;
+    gap: 8px;
+}
+
+/* Status das Receitas */
+.tag-status {
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    text-transform: uppercase;
+}
+
+.tag-status.pendente { background: #fef7e0; color: #b08d00; border: 1px solid #fbbc04; }
+.tag-status.preparando { background: #e8f0fe; color: #1a73e8; border: 1px solid #1a73e8; }
+.tag-status.liberado { background: #e6f4ea; color: #1e8e3e; }
+
+/* Corpo da Prescrição (Medicamentos) */
+.prescricao-corpo {
+    background: #f8f9fa;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.lista-medicamentos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item-medicamento {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #202124;
+    font-weight: 500;
+}
+
+.icone-pilula {
+    color: #1a73e8;
+}
+
+/* Ações e Rodapé do Card */
+.prescricao-acoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f1f3f4;
+    padding-top: 16px;
+}
+
+.tempo-espera {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #d93025; /* Vermelho para dar senso de urgência */
+    font-weight: 600;
+}
+
+.botoes-acao button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: 0.2s;
+}
+
+.btn-preparar {
+    background: #1a73e8;
+    color: white;
+}
+.btn-preparar:hover { background: #1557b0; }
+
+.btn-liberar {
+    background: #1e8e3e;
+    color: white;
+}
+.btn-liberar:hover { background: #146c2e; }
+
+/* COLUNA HISTÓRICO */
+.coluna-historico {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #dadce0;
+}
+
+.lista-historico-farmacia {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card-historico-rx {
+    padding: 12px;
+    border: 1px solid #f1f3f4;
+    border-radius: 8px;
+    background: #fafafa;
+}
+
+.hist-rx-topo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #202124;
+}
+
+.hist-rx-info {
+    margin: 0;
+    font-size: 12px;
+    color: #80868b;
+}
+
+.mensagem-vazia {
+    color: #5f6368;
+    font-style: italic;
+    text-align: center;
+    padding: 40px;
+}

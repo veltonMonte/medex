@@ -1,0 +1,148 @@
+1. História de Usuário Touchpoints: Painel de Visão Geral de Leitos (Cards de status) (Narrativa):
+• Como Juliana, a Enfermeira Multi-tarefas
+• Eu quero visualizar um painel geral com cards de status interativos e com codificação de cores para cada leito da minha ala
+• Para identificar imediatamente e sem ambiguidades quais pacientes estão com a alta médica liberada e precisam do checklist de enfermagem, sem precisar abrir prontuários individuais.
+
+2. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• **Título da Tela:** Visão Geral da Ala (Painel de Leitos)
+• **Subtítulo:** Status Atual - Posto [Nome do Posto]
+• **Estrutura Visual Esperada (Otimizada para Mobile/Responsivo):**
+  • **Header Fixo (Topo):** Menu horizontal rolável com *chips* de filtro rápido para visualização em um clique (ex: "Todos", "Alta Liberada", "Atenção", "Vagos").
+  • **Grid de Leitos (Corpo da tela):** Exibição em lista vertical (mobile) ou grade de blocos (tablet/desktop). Cada unidade é um *Card de Leito*.
+  • **Conteúdo do Card de Leito:** • **Identificador:** Número do Leito bem grande e em negrito.
+    • **Paciente:** Nome do paciente abreviado e idade.
+    • **Badge de Status:** Etiqueta visual de alto contraste e cor específica (ex: verde brilhante para "Alta Médica Liberada").
+    • **Ação Direta:** Um botão minimalista ou ícone de "Checklist" no canto inferior direito do card, acessível para o toque com o polegar.
+  • **Rodapé:** Oculto ou simplificado, priorizando o espaço de tela para a listagem dos leitos.
+
+3. Critérios de Aceitação (BDD — Behavior Driven Development):
+• Dado que acesso o sistema pelo dispositivo móvel ou posto de enfermagem e caio no Painel de Visão Geral de Leitos
+• Quando analiso os cards visuais e utilizo o filtro de "Alta Liberada" para focar nas transições pendentes
+• E clico diretamente no ícone de checklist do card de um paciente (ex: Leito 12)
+• Então o sistema deve deslizar suavemente o painel lateral do Checklist Interativo de Alta sem abrir novas janelas ou abas, mantendo o contexto da ala visível no fundo.
+
+4. História de Usuário Touchpoints: Seleção de Paciente com Alta Médica Liberada (Narrativa):
+• Como Juliana, a Enfermeira Multi-tarefas
+• Eu quero identificar e selecionar rapidamente o card de um paciente com "Alta Médica Liberada" no painel geral
+• Para iniciar o preenchimento do checklist de alta de enfermagem instantaneamente, sem precisar abrir o prontuário completo ou navegar por múltiplas abas pesadas.
+
+5. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• **Título/Área da Tela:** Interação no Card do Paciente (Painel de Leitos)
+• **Estrutura Visual Esperada (Otimizada para Mobile/Responsivo):**
+  • **Card em Destaque:** O card do leito específico ganha um destaque visual para saltar aos olhos (ex: borda de cor verde suave ou sombra projetada), diferenciando-se dos pacientes em atendimento regular.
+  • **Badge de Status:** Etiqueta (tag) muito nítida no topo do card com o texto "Alta Médica Liberada" e um ícone de "check".
+  • **Área de Toque (Hitbox Ampliada):** Todo o card do paciente funciona como um único botão grande, facilitando o toque rápido com o polegar (Thumb Zone) enquanto a enfermeira se movimenta pela ala.
+  • **Feedback Tátil/Visual (Microinteração):** Ao tocar no card, um efeito de "ripple" (ondulação) ou leve escurecimento confirma que o sistema registrou o toque de imediato, reduzindo a ansiedade de travamento.
+
+6. Critérios de Aceitação (BDD — Behavior Driven Development):
+• Dado que estou navegando no Painel de Visão Geral de Leitos e visualizo a lista de pacientes da minha ala
+• Quando bato o olho e identifico visualmente o selo verde indicando "Alta Médica Liberada" no leito correspondente (ex: Leito 12)
+• E toco no card deste paciente para prosseguir com minha rotina
+• Então o sistema deve processar o clique instantaneamente e deslizar sobre a tela atual um painel lateral (ou Bottom Sheet no mobile) contendo o Checklist Interativo de Alta, sem recarregar a página ou abrir novas abas.
+
+7. História de Usuário Touchpoints: Painel Lateral com Checklist Interativo (estilo Google Tasks) (Narrativa):
+• Como Juliana, a Enfermeira Multi-tarefas
+• Eu quero um painel lateral sobreposto contendo um checklist interativo e visualmente limpo (estilo Google Tasks) com as etapas da transição de cuidado
+• Para preencher as tarefas de alta de enfermagem de forma rápida, intuitiva e à prova de erros visuais, sem a sobrecarga mental de ler formulários densos ou abrir novas abas.
+
+8. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• **Título da Tela:** Alta de Enfermagem
+• **Subtítulo:** Checklist - [Nome do Paciente] | Leito [Número]
+• **Estrutura Visual Esperada (Otimizada para Mobile/Responsivo):**
+  • **Header Fixo (Topo):** Ícone de "X" (fechar) à direita para saída rápida. Abaixo do título, uma barra de progresso horizontal e dinâmica (ex: "2/4 concluídos"), fornecendo feedback visual imediato do avanço.
+  • **Corpo do Painel (Lista Interativa):** Estrutura em lista minimalista, sem bordas pesadas.
+  • **Itens do Checklist:** Linhas de toque amplas (hitboxes grandes para polegares). Cada item possui um *checkbox* circular à esquerda. Textos diretos: "Retirada de acesso venoso", "Entrega de receitas e pertences", "Aviso à higienização de leito".
+  • **Microinteração (Feedback Visual):** Ao tocar no *checkbox*, o item ganha um efeito suave de texto tachado (strikethrough) e a cor da fonte fica esmaecida (cinza claro), imitando o comportamento de conclusão de tarefa do Google Tasks.
+  • **Campo de Anotações:** Ao final da lista, um campo de texto expansível discreto para "Observações de enfermagem (Opcional)".
+  • **Rodapé Fixo (Sticky Footer):** Espaço reservado para o botão de ação principal, que permanece desativado (cinza) até que os itens obrigatórios sejam marcados.
+
+9. Critérios de Aceitação (BDD — Behavior Driven Development):
+• Dado que o painel lateral de Checklist Interativo deslizou sobre a tela após a seleção do paciente
+• Quando eu marco (toco) nos checkboxes correspondentes às tarefas práticas realizadas com o paciente
+• E o sistema risca visualmente os itens concluídos atualizando a barra de progresso no topo para 100%
+• Então o sistema deve habilitar automaticamente o botão principal no rodapé (mudando-o de cinza para a cor primária de ação), sinalizando que o checklist está livre de pendências e pronto para ser finalizado.
+
+10. História de Usuário Touchpoints: Conclusão e Liberação do Leito. (Narrativa):
+• Como Juliana, a Enfermeira Multi-tarefas
+• Eu quero um botão primário de confirmação claro e dinâmico ao final do checklist
+• Para concluir a alta de enfermagem e liberar o leito instantaneamente no sistema, atualizando o status da ala e garantindo que não restem pendências no meu turno.
+
+11. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• **Título/Área:** Rodapé Fixo do Checklist (Sticky Footer)
+• **Estrutura Visual Esperada (Otimizada para Mobile/Responsivo):**
+  • **Footer Fixo (Sticky Footer):** Uma barra fixa na parte inferior do painel lateral (ou Bottom Sheet no mobile), acessível na zona de conforto do polegar (Thumb Zone), independentemente da rolagem da lista de tarefas.
+  • **Botão Primário (Call to Action):** Botão expansivo ocupando 100% da largura útil. 
+  • **Estado Dinâmico (Enable/Disable):** O botão possui uma transição visual. Permanece cinza e inativo (disabled) enquanto houver itens obrigatórios desmarcados no checklist. Ao atingir 100% de conclusão, transiciona suavemente para a cor primária de sucesso do sistema (ex: verde brilhante) e ganha elevação (sombra).
+  • **Label (Texto):** "Concluir Alta e Liberar Leito" em fonte Roboto, negrito, com alto contraste.
+  • **Subtítulo de Ação (Microcopy):** Um texto muito pequeno e discreto logo abaixo ou dentro do botão: "O leito mudará para: Aguardando Higienização".
+
+12. Critérios de Aceitação (BDD — Behavior Driven Development):
+• Dado que preenchi todos os itens obrigatórios do Checklist Interativo de Alta e o botão de conclusão foi ativado no rodapé
+• Quando toco no botão primário "Concluir Alta e Liberar Leito"
+• E o sistema processa a ação vinculando-a ao meu usuário (assinatura de enfermagem em background)
+• Então o painel de checklist deve fechar deslizando para baixo, o leito em questão deve ter seu status atualizado instantaneamente para "Aguardando Higienização" no painel geral, e uma notificação de sucesso (Toast message) deve aparecer confirmando a liberação do paciente.
+
+13. História de Usuário Touchpoints: Tela de Login (Narrativa):
+• Como Juliana, a Enfermeira Multi-tarefas
+• Eu quero uma tela de login minimalista, de carregamento instantâneo e com suporte a visualização de senha e preenchimento automático
+• Para acessar o sistema rapidamente no início do turno ou após uma interrupção, sem perder tempo com erros de digitação e burocracias de acesso, focando logo no planejamento da minha ala.
+
+14. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• **Título da Tela:** Logo do FortalMed (em destaque e centralizado)
+• **Subtítulo:** Bem-vindo(a). Insira suas credenciais para acessar seu posto.
+• **Estrutura Visual Esperada (Otimizada para Mobile/Responsivo):**
+  • **Layout Clean:** Fundo branco ou em tom neutro muito claro, sem imagens pesadas em background para garantir o carregamento da página em menos de 1 segundo, mesmo no Wi-Fi oscilante do hospital.
+  • **Campo 1 (Usuário/CPF):** Input de texto com suporte nativo a preenchimento automático (Auto-fill) do dispositivo, facilitando o acesso repetitivo.
+  • **Campo 2 (Senha):** Input de senha com um ícone de "olho" interativo no lado direito (Show/Hide password), permitindo que a enfermeira confira o que digitou rapidamente para evitar bloqueios por erro de digitação na pressa.
+  • **Opção de Facilidade:** Checkbox discreto "Manter conectado neste dispositivo", agilizando retornos ao sistema durante o mesmo plantão.
+  • **Botão Primário (Call to Action):** Botão expansivo (100% da largura útil), cor principal do sistema, com o texto "Acessar Sistema" em negrito.
+  • **Apoio (Rodapé):** Link simples e sem distração visual para "Esqueci minha senha" logo abaixo do botão principal.
+
+15. Critérios de Aceitação (BDD — Behavior Driven Development):
+• Dado que pego meu celular ou tablet no posto de enfermagem e acesso a URL do sistema para iniciar minha rotina
+• Quando preencho meu usuário e senha corretamente (ou utilizo a biometria/preenchimento automático do dispositivo)
+• E toco no botão primário "Acessar Sistema"
+• Então o sistema deve me autenticar de forma instantânea e me redirecionar diretamente para a "Visão de Lista de Pacientes Admitidos na Ala", sem me obrigar a passar por painéis administrativos ou telas intermediárias desnecessárias.
+
+16. História de Usuário Touchpoints: Visão de Lista de Pacientes Admitidos na Ala (Narrativa):
+• Como Juliana, a Enfermeira Multi-tarefas
+• Eu quero visualizar uma lista organizada em cards dos pacientes admitidos na minha ala, com indicadores de status de medicação
+• Para bater o olho e identificar rapidamente quais pacientes possuem prescrições pendentes ou próximas do horário, permitindo o planejamento da administração de forma segura e sem precisar abrir prontuário por prontuário.
+
+17. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• **Título da Tela:** Visão da Ala - [Nome do Setor]
+• **Subtítulo:** Pacientes e Status de Prescrição
+• **Estrutura Visual Esperada (Otimizada para Mobile/Responsivo):**
+  • **Header Fixo (Topo):** Barra de busca ágil por Leito ou Nome. Abaixo da busca, *chips* de filtro rápido para organizar a visualização (ex: "Todos os Leitos", "Medicação Pendente", "Medicação Atrasada", "Checagem Concluída").
+  • **Corpo da Tela (Grid de Cards):** Lista rolável de pacientes apresentados em blocos visuais (cards) independentes, com bom espaçamento para evitar toques acidentais.
+  • **Conteúdo do Card de Paciente:** • Identificação no topo esquerdo do card: Número do Leito em fonte grande e negrito, seguido do nome abreviado do paciente.
+    • **Badges de Alerta (Status):** Etiquetas visuais coloridas no canto superior direito do card informando a urgência (ex: Tag vermelha "Atrasado", Tag amarela "Próx. Dose 14:00", Tag verde "Tudo Checado").
+    • **Preview de Prescrição:** Uma linha de resumo mostrando os próximos medicamentos em formato de mini *Smart Chips* (ex: "Dipirona 1g", "Soro Fisiológico"), para que a enfermeira saiba o que preparar só de olhar.
+  • **Área de Interação do Card:** Todo o card é clicável, funcionando como um botão de área ampla para facilitar o toque em movimento.
+
+18. Critérios de Aceitação (BDD — Behavior Driven Development):
+• Dado que efetuei o login e o sistema carregou a Visão de Lista de Pacientes Admitidos na Ala
+• Quando visualizo os cards dos pacientes e utilizo os chips de filtro para exibir apenas aqueles com "Medicação Pendente"
+• E toco no card de um paciente específico (ex: Leito 12)
+• Então o sistema deve realizar a transição imediata para a Thread do Paciente, revelando a prescrição médica completa e os Smart Chips de medicamentos na mesma janela, de forma suave e livre de travamentos.
+
+19. História de Usuário Touchpoints: Acesso à Thread do Paciente (Leitura da evolução e Smart Chips de medicamentos prescritos). (Narrativa):
+• Como Juliana, a Enfermeira Multi-tarefas
+• Eu quero acessar o prontuário do paciente estruturado visualmente como uma thread, onde a prescrição médica é detalhada através de *Smart Chips*
+• Para ler a evolução clínica e os medicamentos a serem administrados de forma inconfundível e organizada, garantindo segurança absoluta no planejamento do cuidado e eliminando o risco de erros por telas confusas.
+
+20. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• **Título da Tela:** Prontuário - Leito [Número]
+• **Subtítulo:** [Nome do Paciente] | Alertas: [Badges de Alergias em Vermelho]
+• **Estrutura Visual Esperada (Otimizada para Mobile/Responsivo):**
+  • **Header Fixo (Topo):** Ícone de seta para "Voltar" à esquerda. O cabeçalho mantém a identificação do paciente sempre visível durante a rolagem para garantir a dupla checagem contínua.
+  • **Corpo da Tela (Visão Thread):** Layout limpo, organizado cronologicamente de cima para baixo. O fundo possui um contraste sutil para separar cada registro clínico.
+  • **Bloco de Evolução Médica:** O texto do médico aparece em um container de leitura confortável, com tipografia legível (mínimo de 16px) e espaçamento adequado, evitando blocos de texto massivos.
+  • **Bloco de Prescrição (Smart Chips):** Abaixo da evolução, a lista de medicamentos prescritos não é um texto corrido. Cada medicamento é renderizado como um *Smart Chip* (um *card* horizontal isolado).
+  • **Estrutura do Smart Chip de Enfermagem:** Cada bloco exibe o Nome do Medicamento em destaque, acompanhado por tags visuais claras para: "Dose", "Via (ex: EV, VO)" e "Horário/Frequência". No canto direito de cada *chip*, há um botão generoso de *checkbox* projetado para a zona de alcance do polegar (Thumb Zone) para a futura checagem.
+
+21. Critérios de Aceitação (BDD — Behavior Driven Development):
+• Dado que toquei no card de um paciente específico (ex: Leito 12) a partir da visão geral da ala
+• Quando a tela da Thread do Paciente é carregada instantaneamente e eu visualizo o bloco da prescrição ativa
+• E faço a leitura dos medicamentos exibidos individualmente no formato de Smart Chips
+• Então o sistema deve me apresentar todas as diretrizes (dosagem, via e horário) de maneira segmentada e livre de ambiguidades visuais, sem a necessidade de dar zoom na tela, abrir arquivos PDF anexos ou fechar abas, permitindo que eu inicie a preparação da medicação com total segurança clínica.

@@ -1,0 +1,273 @@
+@import '../TelaPaciente/TelaPacientes.css';
+
+/* Layout em 3 Colunas: Esquerda (280px) | Centro (Fluido) | Direita (280px) */
+.prontuario-grid-3 {
+    display: grid;
+    grid-template-columns: 280px 1fr 280px;
+    gap: 24px;
+    align-items: start;
+    height: calc(100vh - 128px);
+}
+
+/* =========================================
+   Coluna Esquerda: Resumo Clínico
+   ========================================= */
+.resumo-clinico {
+    background: white;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    /* Mantém a coluna fixa se houver rolagem na tela inteira */
+    position: sticky; 
+    top: 0;
+}
+
+.resumo-header h2 { font-size: 18px; color: #202124; margin-bottom: 6px; }
+.resumo-header p { font-size: 12px; color: #5f6368; }
+
+.alerta-card {
+    background-color: #fce8e6;
+    border-left: 3px solid #d93025;
+    padding: 12px;
+    border-radius: 4px 8px 8px 4px;
+    display: flex;
+    gap: 12px;
+}
+
+.alerta-icon { color: #d93025; font-size: 18px; margin-top: 2px; }
+.alerta-card strong { color: #d93025; font-size: 12px; display: block; margin-bottom: 2px; }
+.alerta-card p { color: #3c4043; font-size: 12px; margin: 0; }
+
+.resumo-section h3 {
+    font-size: 13px;
+    color: #202124;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.icon-resumo { font-size: 16px; color: #5f6368; }
+.texto-vazio { color: #80868b; font-size: 12px; font-style: italic; border-top: 1px solid #f1f3f4; padding-top: 12px; }
+
+/* =========================================
+   Coluna Central: Thread
+   ========================================= */
+.thread-container {
+    background: #f8f9fa;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.thread-header {
+    padding: 20px 24px;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: space-between;
+}
+
+.thread-header h2 { font-size: 16px; color: #202124; margin: 0; }
+
+.thread-historico {
+    flex: 1;
+    overflow-y: auto; /* Permite rolar apenas as mensagens da thread */
+    padding: 0 24px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.thread-balao {
+    background: white;
+    border: 1px solid #dadce0;
+    border-left: 4px solid #5f6368;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02); /* Suave elevação estilo Gmail */
+}
+
+.balao-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.balao-header strong { font-size: 13px; color: #202124; }
+.balao-tipo { background: #f1f3f4; color: #5f6368; padding: 2px 8px; border-radius: 12px; font-size: 11px; }
+.balao-hora { color: #80868b; font-size: 12px; display: flex; align-items: center; gap: 4px; margin-left: auto; }
+
+/* CORREÇÃO APLICADA AQUI: Quebra de palavras gigantes */
+.balao-corpo { 
+    font-size: 13px; 
+    color: #3c4043; 
+    line-height: 1.5; 
+    white-space: pre-wrap; 
+    word-break: break-word; /* Quebra a palavra se for muito grande */
+    overflow-wrap: break-word; /* Garante o suporte em diferentes navegadores */
+}
+
+.thread-input-area {
+    padding: 24px;
+    background: #f8f9fa;
+    border-top: 1px solid #dadce0; /* Linha de divisão entre histórico e digitação */
+}
+
+/* HISTÓRIA 10: Ajuste fino para o campo que cresce dinamicamente */
+.input-evolucao {
+    width: 100%;
+    border: 1px solid #dadce0;
+    border-radius: 6px;
+    padding: 12px;
+    font-family: inherit;
+    font-size: 13px;
+    resize: none;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    line-height: 1.5;
+    box-sizing: border-box; /* Garante que o padding não quebre a largura */
+}
+
+.input-evolucao:focus { 
+    border-color: #1a73e8; 
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2); /* Efeito Material de foco */
+}
+
+.input-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.dica-atalho { font-size: 12px; color: #80868b; }
+
+.btn-enviar {
+    background-color: #dadce0;
+    color: white;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: not-allowed;
+    display: flex;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.btn-enviar:not(:disabled) {
+    background-color: #1a73e8;
+    cursor: pointer;
+}
+
+.btn-enviar:not(:disabled):hover { background-color: #1557b0; }
+
+/* =========================================
+   Coluna Direita: Histórico de Atendimentos
+   ========================================= */
+.historico-lateral {
+    background: white;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: sticky; /* Mantém a coluna fixa se a thread crescer muito */
+    top: 0;
+}
+
+.historico-header h3 {
+    font-size: 13px;
+    color: #202124;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.lista-atendimentos {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card-atendimento {
+    border: 1px solid #dadce0;
+    border-radius: 6px;
+    padding: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+    background: #fff;
+}
+
+.card-atendimento:hover { background-color: #f8f9fa; }
+
+.card-atendimento.ativo {
+    border-color: #1a73e8;
+    background-color: #f8fbff;
+}
+
+.atd-motivo { font-size: 13px; color: #202124; font-weight: 600; margin-bottom: 8px; }
+
+.atd-tempos {
+    background-color: #f1f3f4;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.card-atendimento.ativo .atd-tempos {
+    background-color: #e8f0fe;
+}
+
+.tempo-linha {
+    font-size: 11px;
+    color: #3c4043;
+    margin-bottom: 4px;
+}
+
+.tempo-linha:last-child {
+    margin-bottom: 0;
+}
+
+.tempo-label {
+    font-weight: 600;
+    color: #5f6368;
+    display: inline-block;
+    width: 38px;
+}
+
+.em-andamento {
+    color: #1a73e8;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.atd-status { font-size: 10px; padding: 3px 8px; border-radius: 4px; display: inline-block; font-weight: bold;}
+.status-aberto { background-color: #e6f4ea; color: #1e8e3e; }
+.status-fechado { background-color: #f1f3f4; color: #5f6368; }
+
+/* Divisores e Badges */
+.divisor-data { display: flex; justify-content: center; margin: 8px 0; }
+.divisor-data span { background-color: #e8eaed; color: #3c4043; font-size: 11px; padding: 4px 12px; border-radius: 12px; font-weight: 600; }
+.rodape-fechado { padding: 16px; text-align: center; color: #5f6368; font-size: 12px; background: #f8f9fa; border-top: 1px solid #dadce0;}
+.badge-somente-leitura {
+    background-color: #fce8e6;
+    color: #d93025;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 6px 12px; 
+    border-radius: 4px; /* Deixado mais "quadradinho" combinando com material design */
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-transform: uppercase;
+}

@@ -1,0 +1,87 @@
+/* Importando os estilos básicos que já usamos no layout */
+@import '../TelaPaciente/TelaPacientes.css';
+
+/* Botão de Avaliar na tabela */
+.btn-avaliar {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.btn-avaliar:hover {
+    background-color: #d2e3fc;
+}
+
+/* Ajustes no Modal de Triagem */
+.modal-lg {
+    max-width: 600px; /* Modal mais largo para caberem os grids */
+}
+
+.section-title {
+    font-size: 14px;
+    color: #5f6368;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #f1f3f4;
+    padding-bottom: 6px;
+}
+
+/* Grid de Sinais Vitais */
+.grid-vitais {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.grid-vitais label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Grid Classificação de Risco (Manchester) */
+.grid-manchester {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.card-cor {
+    padding: 12px 0;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.2s;
+    border: 2px solid transparent;
+}
+
+.card-cor:hover {
+    opacity: 0.8;
+}
+
+.card-cor.selecionado {
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    border: 2px solid #202124; /* Contorno para destacar */
+}
+
+/* Cores Oficiais do Protocolo de Manchester */
+.cor-Emergencia { background-color: #d93025; } /* Emergência */
+.cor-Muito-Urgente  { background-color: #e2711d; } /* Muito Urgente */
+.cor-Urgente  { background-color: #f9ab00; } /* Urgente */
+.cor-Pouco-Urgente    { background-color: #1e8e3e; } /* Pouco Urgente */
+.cor-Não-urgente     { background-color: #1967d2; } /* Não Urgente */

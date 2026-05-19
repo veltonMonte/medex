@@ -1,0 +1,202 @@
+@import '../TelaPaciente/TelaPacientes.css';
+
+/* =========================================
+   CABEÇALHO E ABAS
+   ========================================= */
+.admin-header-secao {
+    margin-bottom: 30px;
+}
+
+.admin-header-secao h1 {
+    font-size: 24px;
+    color: #202124;
+    margin-bottom: 8px;
+}
+
+.admin-header-secao p {
+    color: #5f6368;
+    margin: 0;
+}
+
+.admin-tabs {
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px solid #dadce0;
+    margin-bottom: 24px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #5f6368;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 3px solid transparent;
+    transition: 0.2s;
+}
+
+.tab-btn:hover { color: #1a73e8; background: #f8f9fa; border-radius: 8px 8px 0 0; }
+.tab-btn.active { color: #1a73e8; border-bottom-color: #1a73e8; }
+
+/* =========================================
+   TABELA DE USUÁRIOS E BOTÕES
+   ========================================= */
+.animacao-fade { animation: fadeIn 0.3s ease-in-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+.acao-topo-tabela {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.acao-topo-tabela h3 { margin: 0; color: #202124; }
+.sub-texto { font-size: 14px; color: #5f6368; margin-top: 4px; }
+
+.btn-adicionar {
+    background: #1a73e8; 
+    color: white; 
+    border: none; 
+    padding: 10px 16px; 
+    border-radius: 8px;
+    font-weight: 600; 
+    display: flex; 
+    align-items: center; 
+    gap: 6px; 
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn-adicionar:hover { background: #1557b0; }
+
+.tabela-admin {
+    width: 100%; border-collapse: collapse; background: white;
+    border: 1px solid #dadce0; border-radius: 8px; overflow: hidden;
+}
+
+.tabela-admin th, .tabela-admin td { padding: 16px; text-align: left; border-bottom: 1px solid #f1f3f4; }
+.tabela-admin th { background: #f8f9fa; color: #5f6368; font-weight: 600; font-size: 13px; text-transform: uppercase; }
+.tabela-admin tbody tr:hover { background: #fcfcfc; }
+.fw-bold { font-weight: 600; color: #202124; }
+
+/* Badges e Status */
+.badge-perfil { padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: bold; }
+
+.p-medico { background: #e8f0fe; color: #1a73e8; }
+.p-farmaceutico { background: #e6f4ea; color: #1e8e3e; }
+.p-recepcionista { background: #fef7e0; color: #b08d00; }
+.p-administrador { background: #f3e8fd; color: #9334e6; } 
+.p-enfermeiro { background: #fce8e6; color: #d93025; }
+
+.status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+.status-dot.on { background: #1e8e3e; }
+.status-dot.off { background: #d93025; }
+
+/* Botões da Tabela */
+.acoes-td { display: flex; gap: 12px; }
+.btn-icon { background: none; border: none; font-size: 18px; cursor: pointer; transition: 0.2s; padding: 0; }
+.text-blue { color: #1a73e8; } .text-blue:hover { color: #1557b0; }
+.text-red { color: #d93025; } .text-red:hover { color: #b31412; }
+
+/* =========================================
+   MÓDULOS (SAAS) E SWITCH
+   ========================================= */
+.grid-modulos { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+
+.card-modulo {
+    background: white; border: 1px solid #dadce0; border-radius: 12px;
+    padding: 24px; display: flex; justify-content: space-between; align-items: center;
+    transition: 0.3s;
+}
+
+.card-modulo.ativo { border-color: #1a73e8; box-shadow: 0 4px 12px rgba(26, 115, 232, 0.1); }
+.modulo-info h4 { margin: 0 0 4px 0; color: #202124; font-size: 16px; }
+.modulo-info span { font-size: 13px; color: #5f6368; font-weight: 500; }
+
+.switch { position: relative; display: inline-block; width: 50px; height: 28px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #dadce0; transition: .4s; }
+.slider:before { position: absolute; content: ""; height: 20px; width: 20px; left: 4px; bottom: 4px; background-color: white; transition: .4s; }
+input:checked + .slider { background-color: #1a73e8; }
+input:checked + .slider:before { transform: translateX(22px); }
+.slider.round { border-radius: 34px; }
+.slider.round:before { border-radius: 50%; }
+
+/* =========================================
+   MODAL DE USUÁRIOS
+   ========================================= */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.modal-form-container {
+    background: white;
+    width: 450px;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.modal-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #f1f3f4;
+    padding-bottom: 12px;
+}
+
+.modal-form-header h3 { margin: 0; color: #202124; font-size: 20px; }
+
+.btn-fechar-modal {
+    background: none; border: none; font-size: 20px; color: #5f6368; cursor: pointer; display: flex;
+}
+.btn-fechar-modal:hover { color: #d93025; }
+
+.form-group { margin-bottom: 16px; }
+.form-row { display: flex; gap: 16px; }
+.form-group.half { flex: 1; }
+
+.form-group label {
+    display: block; margin-bottom: 6px; font-size: 13px; font-weight: 600; color: #5f6368;
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%; padding: 10px 12px; border: 1px solid #dadce0; border-radius: 6px;
+    font-size: 14px; color: #202124; outline: none; transition: 0.2s; box-sizing: border-box;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+    border-color: #1a73e8; box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
+
+.modal-acoes {
+    display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px;
+    padding-top: 16px; border-top: 1px solid #f1f3f4;
+}
+
+.btn-cancelar {
+    background: white; border: 1px solid #dadce0; color: #5f6368; padding: 10px 16px;
+    border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.2s;
+}
+.btn-cancelar:hover { background: #f8f9fa; color: #202124; }
+
+.btn-salvar {
+    background: #1a73e8; border: none; color: white; padding: 10px 16px;
+    border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.2s;
+}
+.btn-salvar:hover { background: #1557b0; }

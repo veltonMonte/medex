@@ -1,0 +1,163 @@
+1. História de Usuário Touchpoints: Navegador Padrão da Estação de Trabalho (Narrativa):
+• Como Fernando, o Analista de TI "Apagador de Incêndios"
+• Eu quero acessar o FortalMed digitando apenas a URL em qualquer navegador padrão (Chrome, Edge, Safari) disponível na estação de trabalho, sem a necessidade de baixar plugins, extensões ou certificados locais
+• Para garantir que a equipe assistencial consiga operar o sistema de qualquer máquina ou dispositivo móvel instantaneamente, reduzindo a zero os chamados de suporte por falha de instalação, incompatibilidade de versão ou travamentos locais.
+
+2. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• **Título/Área:** Interface de Acesso Web (Browser Entry Point)
+• **Subtítulo:** Conexão Segura e Agnóstica
+• **Estrutura Visual Esperada (Otimizada para Dispositivo Móvel e Responsivo):**
+  • **Contexto do Navegador (Header):** A barra de endereços exibe o cadeado de segurança (HTTPS) e uma URL limpa (ex: `app.fortalmed.com.br`). A interface deve ocupar 100% da *viewport* disponível, sem exibir banners intrusivos de "Baixe nosso App" ou "Instale o plugin de assinatura".
+  • **Validação Silenciosa (Background):** Ao invés de telas de carregamento pesadas, o sistema roda uma validação ultrarrápida em background para confirmar o suporte a HTML5 e JavaScript moderno, garantindo o funcionamento da *Single Page Application* (SPA).
+  • **Corpo da Tela (Zero Fricção):** Exibição imediata dos campos de credenciais (Usuário e Senha) com suporte a gerenciadores de senha nativos dos navegadores e dos sistemas operacionais (iOS/Android).
+  • **Indicador de Saúde da Aplicação (Rodapé):** Um badge minimalista e discreto na parte inferior com um ponto verde e o texto "Conectado à Nuvem", transmitindo a garantia visual de que a infraestrutura está operando de forma remota e estável, sem depender de recursos da máquina física.
+
+3. Critérios de Aceitação (BDD — Behavior Driven Development):
+• Dado que estou configurando um tablet ou computador recém-formatado na estação de enfermagem, contendo apenas o sistema operacional limpo e um navegador web atualizado
+• Quando abro o navegador, digito a URL oficial de acesso e inicio o carregamento da página
+• E a rede do hospital autoriza a conexão segura padrão (HTTPS/Porta 443)
+• Então o sistema deve renderizar a interface gráfica completa em menos de 2 segundos, sem acionar nenhum alerta, pop-up ou bloqueio solicitando a instalação de softwares de terceiros (como Java Runtime, LAS, ou extensões de browser), permitindo que a equipe inicie o plantão imediatamente.
+
+4. História de Usuário Touchpoints: Acesso via URL do Sistema (Narrativa):
+• Como Fernando, o Analista de TI "Apagador de Incêndios"
+• Eu quero que o acesso via URL do sistema direcione instantaneamente para uma aplicação web leve, segura e totalmente renderizada no navegador (Single Page Application)
+• Para garantir que qualquer membro da equipe assistencial consiga logar e trabalhar de qualquer dispositivo do hospital, eliminando a minha necessidade de instalar dependências locais, certificados complexos ou softwares legados.
+
+5. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• **Título/Área:** Carregamento Inicial (Acesso via URL)
+• **Subtítulo:** Conectando ao ambiente seguro
+• **Estrutura Visual Esperada (Otimizada para Dispositivo Móvel e Responsivo):**
+  • **Feedback de Transição (Skeleton Screen / Microinteração):** Assim que a URL (`app.fortalmed.com.br`) é acionada, o navegador não deve ficar em tela branca esperando o servidor. Uma estrutura de "esqueleto" (Skeleton Loading) ou a logo do sistema com um *spinner* minimalista deve aparecer imediatamente, indicando que a aplicação já foi entregue via CDN.
+  • **Layout Clean de Entrada:** Após a renderização (em menos de 1 segundo), a tela se converte na interface de autenticação limpa. Fundo neutro, campos de input (Usuário/Senha) centralizados e botão de acesso direto.
+  • **Ausência de Alertas Intrusivos:** A tela é projetada para não disparar *pop-ups* nativos do navegador pedindo para "Instalar Flash", "Permitir Java" ou "Baixar Plugin de Assinatura".
+  • **Microcopy Técnico (Rodapé):** Um texto extremamente sutil e em fonte pequena (ex: 10px) no canto inferior direito informando a versão da *build* e o status de conexão (ex: "v.1.0.4 • Cloud Active"). Isso é invisível para o médico, mas permite que o Fernando valide rapidamente se a máquina está pegando a versão mais atualizada da nuvem ao bater o olho na tela.
+
+6. Critérios de Aceitação (BDD — Behavior Driven Development):
+• Dado que sento em frente a uma máquina recém-formatada no posto de enfermagem (ou acesso o navegador via celular)
+• Quando digito a URL oficial do sistema na barra de endereços e envio a requisição
+• E a rede hospitalar conclui o roteamento padrão da internet (HTTPS)
+• Então o servidor deve entregar os arquivos da aplicação web imediatamente, renderizando a tela inicial de autenticação de forma completa, fluida e funcional, sem que eu precise executar nenhum instalador `.exe` ou configurar permissões locais de administrador.
+
+7. História de Usuário Touchpoint: Tela Login (Narrativa):
+• Como Fernando, o Analista de TI "Apagador de Incêndios"
+• Eu quero uma tela de login renderizada instantaneamente pelo navegador, baseada em tecnologias web modernas nativas e hospedada na nuvem
+• Para validar de imediato que o FortalMed não depende de plugins legados, Java ou configurações locais, garantindo a redução drástica de chamados de suporte e me dando a segurança de que o deploy (ex: via containers/AWS) funciona em qualquer máquina do hospital.
+
+8. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• **Título da Tela:** Logo do FortalMed (em destaque e vetorizado para carregamento leve)
+• **Subtítulo:** Portal do Colaborador - Acesso Seguro
+• **Estrutura Visual Esperada (Otimizada para Dispositivo Móvel e Responsivo):**
+  • **Layout Clean e Responsivo:** Fundo sólido (modo claro/escuro automático), sem texturas pesadas, projetado em um framework moderno (ex: React) para que a interface se adapte a qualquer resolução, desde um monitor antigo de posto de enfermagem até o smartphone do plantonista.
+  • **Campos de Entrada (Inputs):** "Matrícula/E-mail corporativo" e "Senha". Ambos com suporte total a preenchimento automático nativo dos navegadores e sem bloqueios de *clipboard* (copiar/colar).
+  • **Facilitador de Acesso (SSO):** Abaixo do formulário principal, um botão opcional de "Entrar com Active Directory / Workspace", aproveitando a gestão de identidade em nuvem para eliminar a gestão manual de senhas pelo suporte.
+  • **Rodapé Técnico (Microcopy de Infraestrutura):** Um indicador muito discreto no canto inferior direito informando a versão da aplicação e o status de conexão da nuvem (ex: `Build v.1.0.2 | Cloud Status: Online`), permitindo que o Fernando faça o *troubleshooting* visual só de olhar para a tela, sem precisar abrir o terminal.
+
+9. Critérios de Aceitação (BDD — Behavior Driven Development):
+• Dado que sento em uma estação de trabalho restrita, sem permissões de administrador e com uma instalação "limpa" do Windows
+• Quando abro o Google Chrome ou Edge, digito a URL do FortalMed e a página de login é carregada
+• E insiro minhas credenciais de TI de teste e clico no botão "Acessar Sistema"
+• Então a plataforma deve autenticar minha sessão instantaneamente e me redirecionar para o painel inicial, comprovando que a arquitetura *web-based* roda perfeitamente sem exigir a instalação de nenhum software de terceiros (como o LAS) ou certificados locais na máquina.
+
+10. História de Usuário Touchpoints: Acesso via URL no Navegador Padrão (Chrome/Edge/Firefox) (Narrativa):
+• Como Fernando, o Analista de TI "Apagador de Incêndios"
+• Eu quero um processo de autenticação instantâneo, preferencialmente com suporte a Single Sign-On (SSO) integrado ao Active Directory do hospital, que me leve direto ao dashboard
+• Para validar que a entrada no FortalMed ocorre integralmente na nuvem em questão de milissegundos, comprovando a estabilidade da arquitetura e eliminando de vez os chamados de suporte por travamento de login em sistemas legados locais.
+
+11. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• **Título/Área:** Transição de Login para o Dashboard Inicial (Visão TI/Admin)
+• **Subtítulo:** Autenticando... / Bem-vindo ao FortalMed
+• **Estrutura Visual Esperada (Otimizada para Dispositivo Móvel e Responsivo):**
+  • **Transição Fluida (Sem Refresh):** Ao confirmar as credenciais, a tela não deve piscar ou recarregar inteira (comportamento nativo de *Single Page Applications*). O botão de login se transforma em um *spinner* de carregamento sutil enquanto o token JWT é validado.
+  • **Acesso Invisível (SSO via Active Directory):** Se o hospital utilizar integração com a rede corporativa, a etapa de digitar senhas pode ser suprimida. A tela detecta a sessão ativa do Windows/Workspace e autentica via SSO (*Zero-click login*), exibindo apenas uma mensagem rápida de "Validando credenciais de rede...".
+  • **Header do Dashboard (Pós-login):** Barra superior minimalista. No mobile, um menu hambúrguer; no desktop, navegação limpa. O diferencial para a paz de espírito do Fernando é um *badge* visual no canto superior (ex: "Nuvem AWS: Operacional" com um ponto verde pulsante).
+  • **Corpo da Tela (O "Alívio" Visual):** Assim que o dashboard abre, a interface não dispara *pop-ups* de erro de Java ou alertas de versão de plugin. O conteúdo principal carrega de forma assíncrona, exibindo as funções do sistema (ou painel de monitoramento de contêineres e sessões, dependendo do perfil de acesso) de maneira leve e organizada.
+
+12. Critérios de Aceitação (BDD — Behavior Driven Development):
+• Dado que acesso a interface do sistema através de um navegador web comum (Chrome/Edge) via smartphone ou desktop, em uma máquina sem nenhuma instalação de software prévia
+• Quando as credenciais de acesso são submetidas (manualmente ou interceptadas via integração com Active Directory)
+• E o servidor responde validando o token de segurança da sessão
+• Então o FortalMed deve processar a entrada em menos de 1 segundo e renderizar o Dashboard Inicial instantaneamente, sem travar o navegador, comprovando na prática que a aplicação roda de forma 100% web, escalável e agnóstica à máquina física do usuário.
+
+13. História de Usuário Touchpoints: Dashboard do Administrador (Narrativa)
+
+* **Como** Fernando, o Analista de TI "Apagador de Incêndios"
+* **Eu quero** visualizar um Dashboard Administrativo centralizado, limpo e com carregamento ultrarrápido, contendo atalhos diretos para os módulos críticos
+* **Para** monitorar a saúde da aplicação na nuvem e navegar para a gestão de usuários e acessos em um único clique, sem perder tempo caçando opções em menus suspensos complexos típicos de sistemas legados.
+
+---
+
+14. Detalhes da Tela (Informações na tela e Protótipo Conceitual)
+
+* **Título da Tela:** Painel de Controle TI (Dashboard)
+* **Subtítulo:** Visão Geral do Sistema - FortalMed
+* **Estrutura Visual Esperada (Otimizada para Dispositivo Móvel e Responsivo):**
+    * **Header Fixo (Topo):** Menu hambúrguer (mobile) à esquerda para navegação global. À direita, o avatar do perfil de TI e um *badge* de status da infraestrutura (ex: um pequeno círculo verde piscante com a label "AWS: Operacional"), garantindo a paz de espírito visual de que a nuvem está estável.
+    * **Grid de Acesso Rápido (Cards):** A área central da tela apresenta blocos (cards) grandes, clicáveis e bem espaçados (excelentes para *touch* no celular). 
+        * **Card Principal:** "Gestão de Usuários e Acessos" (Ícone de grupo/cadeado em destaque).
+        * **Cards Secundários:** "Sessões Ativas", "Logs de Erros", "Monitoramento de Instâncias".
+    * **Painel de Métricas (Health Check):** Logo abaixo dos cards, um resumo minimalista de métricas de uso em tempo real (ex: "245 Usuários Online", "Latência: 45ms"), provando que o sistema é leve e performático.
+    * **Layout Clean:** Sem excesso de tabelas densas logo na tela inicial. O foco é direcionar o Fernando rapidamente para a ação que ele precisa resolver (o chamado/ticket aberto).
+
+---
+
+15. Critérios de Aceitação (BDD — Behavior Driven Development)
+
+* **Dado que** realizei o login com sucesso via navegador web utilizando minhas credenciais de Administrador de TI
+* **Quando** o sistema renderiza a tela inicial do Dashboard e eu visualizo o grid de opções rápidas
+* **E** toco ou clico no card principal de "Gestão de Usuários e Acessos"
+* **Então** a plataforma deve realizar a transição imediata para o Módulo de Gestão de Acesso, de forma fluida (sem recarregar a página inteira, mantendo a experiência de *Single Page Application*), livre de travamentos e sem a necessidade de abrir novas janelas ou abas de navegador.
+
+16. História de Usuário Formulário de Criação de Novo Usuário (Seleção de Perfil: Médico/Enfermeiro/Recepção) (Narrativa):
+• **Como** Fernando, o Analista de TI "Apagador de Incêndios"
+• **Eu quero** um formulário de criação de usuário simplificado com seleção de perfis pré-configurados (Médico, Enfermeiro, Recepção) via navegador
+• **Para** realizar o cadastro de novos colaboradores em segundos e garantir que eles tenham as permissões corretas sem eu precisar configurar permissões manuais ou instalar módulos locais em cada estação.
+
+---
+
+17. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• **Título da Tela:** Criar Novo Usuário
+• **Subtítulo:** Defina as credenciais e o nível de acesso do colaborador.
+• **Estrutura Visual Esperada (Otimizada para Dispositivo Móvel):**
+    * **Header Fixo:** Botão de "Voltar" e título centralizado.
+    * **Seção de Dados Básicos:** Cards de input com bordas suaves e espaçamento generoso para evitar erros de toque no mobile.
+        * Campo 1: **Nome Completo** (Input de texto).
+        * Campo 2: **E-mail Corporativo** (Input de texto com validação em tempo real).
+        * Campo 3: **Matrícula** (Input numérico).
+    * **Seção de Perfil de Acesso (Diferencial de UX):** Em vez de um dropdown comum, utilizar **Selectable Cards** ou **Radio Buttons Estilizados**. Cada perfil (Médico, Enfermeiro, Recepção) é exibido como um card com ícone representativo e uma breve descrição das permissões incluídas (ex: "Médico: Acesso a prescrições e prontuários").
+    * **Visual Clean:** Interface agnóstica de navegador (CSS moderno) que não exige renderização de componentes Java ou plugins de segurança.
+    * **Rodapé:** Botão primário "Continuar" desabilitado até que os campos obrigatórios sejam preenchidos.
+
+---
+
+18. Critérios de Aceitação (BDD — Behavior Driven Development):
+• **Dado que** estou autenticado no Dashboard do Administrador e acessei o Módulo de Gestão de Acesso via URL (Chrome/Edge/Firefox)
+• **Quando** preencho os dados demográficos do novo colaborador e seleciono um dos perfis pré-definidos (ex: seleciono o card "Médico")
+• **E** clico no botão "Salvar Usuário"
+• **Então** o sistema deve processar a criação instantaneamente na nuvem, exibir uma mensagem de sucesso (Toast) e redirecionar-me para a lista de usuários, confirmando que o perfil já está ativo e operacional para qualquer máquina do hospital sem intervenção técnica local.
+
+19. História de Usuário Botão "Salvar Usuário" (Narrativa):
+• **Como** Fernando, o Analista de TI "Apagador de Incêndios"
+• **Eu quero** um botão de salvamento de alta visibilidade e resposta instantânea no navegador, que finalize a criação do perfil diretamente na nuvem
+• **Para** consolidar a criação do novo usuário e suas permissões sem depender de sincronizações locais ou instalações de plugins, eliminando chamados futuros de "usuário sem acesso" e garantindo que o colaborador já possa logar de qualquer máquina do hospital.
+
+---
+
+20. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• **Título/Área:** Rodapé de Ação do Formulário de Usuário (Sticky Footer)
+• **Subtítulo:** Finalização do Cadastro Administrativo
+• **Estrutura Visual Esperada (Otimizada para Dispositivo Móvel):**
+    * **Botão Primário (Call to Action):** Posicionado na base da tela para fácil alcance do polegar. Ocupa 100% da largura útil no mobile.
+    * **Label:** "Salvar e Ativar Usuário" (em negrito, fonte Roboto/Sans-serif).
+    * **Estado Desativado (Disabled):** O botão deve estar em cinza claro e sem resposta ao clique enquanto os campos obrigatórios (Nome, E-mail e Perfil) não estiverem validados pelo sistema.
+    * **Estado Ativo (Enabled):** Cor primária vibrante (ex: Azul Hospitalar ou Verde Sucesso) com elevação visual (sombra) para indicar que o formulário está pronto.
+    * **Feedback de Processamento (Loading):** Ao ser clicado, o texto do botão deve ser substituído por um *spinner* circular discreto, indicando que a comunicação com a nuvem (API) está ocorrendo, impedindo cliques duplos que gerem usuários duplicados.
+    * **Visual Agnóstico:** Sem pop-ups de segurança do Windows ou avisos de "script de execução" de navegadores legados; a confirmação ocorre totalmente dentro do DOM da aplicação web.
+
+---
+
+21. Critérios de Aceitação (BDD — Behavior Driven Development):
+• **Dado que** preenchi todos os dados demográficos e selecionei o perfil de acesso (Médico, Enfermeiro ou Recepção) no formulário web
+• **Quando** clico no botão "Salvar e Ativar Usuário" a partir de qualquer navegador padrão (Chrome/Edge/Firefox)
+• **E** o sistema valida a integridade dos dados e a conexão com o servidor na nuvem
+• **Então** o FortalMed deve processar o salvamento em menos de 1 segundo, exibir uma notificação flutuante (Toast) de sucesso no topo da tela e me redirecionar automaticamente para a Listagem de Usuários, com o novo perfil já listado como "Ativo" e pronto para uso imediato em qualquer terminal do hospital.
+

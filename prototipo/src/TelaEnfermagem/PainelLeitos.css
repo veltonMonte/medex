@@ -1,0 +1,187 @@
+@import '../TelaPaciente/TelaPacientes.css';
+
+/* =========================================
+   Cabeçalho e Filtros
+   ========================================= */
+.painel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    background: white;
+    padding: 20px 24px;
+    border-radius: 8px;
+    border: 1px solid #dadce0;
+}
+
+.filtros-rapidos {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-filtro {
+    background: #f1f3f4;
+    border: 1px solid transparent;
+    color: #5f6368;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-filtro:hover { background: #e8eaed; }
+
+.btn-filtro.ativo { background: #e8f0fe; color: #1a73e8; border-color: #d2e3fc; }
+.btn-filtro.filtro-alta.ativo { background: #e6f4ea; color: #1e8e3e; border-color: #ceead6; }
+.btn-filtro.filtro-alerta.ativo { background: #fce8e6; color: #d93025; border-color: #fad2cf; }
+
+/* =========================================
+   Grade de Leitos (Dashboard Grid)
+   ========================================= */
+.leitos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    animation: fadeIn 0.4s ease-out; /* Refinamento: Animação de entrada */
+}
+
+.card-leito {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease;
+    border: 1px solid #dadce0;
+    border-top: 4px solid #dadce0;
+}
+
+.card-leito:hover {
+    transform: translateY(-4px); /* Refinamento: Elevação mais perceptível */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* Cores de Status na borda superior */
+.status-cinza { border-top-color: #9aa0a6; }
+.status-azul { border-top-color: #1a73e8; }
+.status-verde { border-top-color: #1e8e3e; }
+.status-vermelho { border-top-color: #d93025; }
+
+/* =========================================
+   Anatomia do Card
+   ========================================= */
+.leito-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid #f1f3f4;
+    background: #fafafa;
+}
+
+.leito-numero { font-size: 16px; font-weight: 700; color: #202124; }
+
+.leito-badge {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 12px;
+    transition: background 0.3s ease;
+}
+
+.status-cinza .leito-badge { background: #f1f3f4; color: #5f6368; }
+.status-azul .leito-badge { background: #e8f0fe; color: #1a73e8; }
+.status-verde .leito-badge { background: #e6f4ea; color: #1e8e3e; }
+.status-vermelho .leito-badge { background: #fce8e6; color: #d93025; }
+
+.leito-body {
+    padding: 16px;
+    flex: 1;
+}
+
+.paciente-nome { font-size: 15px; color: #202124; display: flex; align-items: center; gap: 8px; margin-bottom: 4px; font-weight: 600; }
+.paciente-info { font-size: 13px; color: #80868b; margin-left: 24px; margin-bottom: 16px; }
+
+/* Status da Medicação */
+.indicador-med {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.indicador-med.em-dia { background: #f1f3f4; color: #5f6368; }
+.indicador-med.pendente { background: #fef7e0; color: #e37400; }
+.indicador-med.atrasada { 
+    background: #fce8e6; 
+    color: #d93025; 
+    font-weight: 700; 
+    border: 1px solid #fad2cf;
+    animation: pulseRed 2s infinite; /* Refinamento: Alerta visual para atraso */
+}
+
+/* Leito Vazio */
+.leito-vazio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #9aa0a6;
+    padding: 20px 0;
+}
+.icone-vazio { font-size: 32px; margin-bottom: 8px; opacity: 0.5; }
+
+/* Rodapé e Botões */
+.leito-footer {
+    padding: 12px 16px;
+    border-top: 1px solid #f1f3f4;
+    background: white;
+}
+
+.btn-acao {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #dadce0;
+    background: white;
+    color: #1a73e8;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-acao:hover { background: #f8f9fa; border-color: #1a73e8; }
+
+.btn-alta {
+    background: #1e8e3e;
+    color: white;
+    border-color: #1e8e3e;
+}
+.btn-alta:hover { 
+    background: #188038; 
+    border-color: #188038; 
+    box-shadow: 0 2px 6px rgba(30, 142, 62, 0.3);
+}
+
+/* Keyframes Extras */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseRed {
+    0% { box-shadow: 0 0 0 0 rgba(217, 48, 37, 0.2); }
+    70% { box-shadow: 0 0 0 6px rgba(217, 48, 37, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(217, 48, 37, 0); }
+}

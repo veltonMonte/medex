@@ -1,0 +1,70 @@
+Fase 1
+• Persona: Roberto — Recepcionista Ágil
+Objetivo da jornada: Realizar a admissão e triagem de pacientes no menor tempo possível, utilizando navegação prioritária via teclado.
+Jornadas a construir (MVP):
+• Cadastro Ágil de Admissão
+  • Jobs funcionais: "Preciso cadastrar dados demográficos e de triagem rapidamente, operando o sistema via atalhos de teclado e sem uso excessivo do mouse."
+  • Jobs emocionais: "Quero sentir controle e calma ao gerenciar filas na emergência, confiando que o sistema responderá instantaneamente."
+  • Touchpoints: Tela Inicial (Barra de Busca Universal) → Modal Sobreposto de Novo Paciente (Acionado via atalho) → Navegação de Campos via 'Tab' → Botão de Confirmar Admissão.
+
+• Persona: Dr. Carlos — Médico Plantonista Sobrecarregado
+Objetivo da jornada: Registrar evoluções, emitir prescrições e conceder altas de forma rápida, linear e sem travamentos.
+Jornadas a construir (MVP):
+• Prescrição Médica Otimizada
+  • Jobs funcionais: "Preciso registrar evoluções clínicas e prescrever medicamentos em poucos cliques, utilizando componentes visuais de busca rápida (Smart Chips)."
+  • Jobs emocionais: "Quero sentir tranquilidade e foco exclusivo no cuidado clínico, sem a frustração de lidar com sistemas lentos."
+  • Touchpoints: Lista de Pacientes (Visão tipo Inbox) → Abertura do Prontuário (Visão tipo Thread de e-mail) → Área de Evolução e Inserção de Smart Chips de Medicamentos → Botão de Assinar e Prescrever.
+• Concessão de Alta Médica
+  • Jobs funcionais: "Preciso concluir altas médicas revisando painéis de resumo consolidados em uma única tela, sem navegação por múltiplas abas."
+  • Jobs emocionais: "Quero sentir alívio ao finalizar o atendimento de forma segura, garantindo a transição eficiente do caso."
+  • Touchpoints: Prontuário do Paciente → Clique no atalho de Alta → Painel de Resumo Consolidado → Botão Confirmar Alta Médica.
+
+• Persona: Juliana — Enfermeira Multi-tarefas
+Objetivo da jornada: Visualizar o status dos pacientes da ala de forma clara e realizar os procedimentos de alta sem burocracia excessiva.
+Jornadas a construir (MVP):
+• Execução de Alta de Enfermagem (Checklist)
+  • Jobs funcionais: "Preciso preencher checklists de alta de enfermagem e transição de leitos de forma interativa e à prova de erros visuais."
+  • Jobs emocionais: "Quero sentir redução da sobrecarga mental ao conseguir bater o olho na tela e saber o que precisa ser feito de forma limpa."
+  • Touchpoints: Painel de Visão Geral de Leitos (Cards de status) → Seleção de Paciente com Alta Médica Liberada → Painel Lateral com Checklist Interativo (estilo Google Tasks) → Conclusão e Liberação do Leito.
+
+• Persona: Fernando — Analista de TI "Apagador de Incêndios"
+Objetivo da jornada: Validar a arquitetura web do produto garantindo o acesso rápido sem a necessidade de instalações locais nas máquinas.
+Jornadas a construir (MVP):
+• Validação de Acesso Agnóstico (Cloud)
+  • Jobs funcionais: "Preciso acessar a interface do sistema via navegadores padrão (Chrome/Edge/Firefox) sem exigir configurações locais, plugins ou softwares como o LAS."
+  • Jobs emocionais: "Quero sentir paz de espírito ao comprovar que a plataforma roda leve na nuvem, eliminando as urgências de manutenção."
+  • Touchpoints: Navegador Padrão da Estação de Trabalho → Acesso via URL do Sistema → Tela de Login → Autenticação Rápida para o Dashboard Inicial.
+
+
+Fase 2
+• Persona: Roberto — Recepcionista Ágil
+Objetivo da jornada: Cadastrar a entrada do paciente no hospital no menor tempo possível para evitar filas na emergência.
+Jornadas a construir (MVP):
+• Cadastro Expresso de Admissão
+• Jobs funcionais: "Preciso cadastrar dados demográficos e de triagem de pacientes rapidamente, operando o sistema prioritariamente via atalhos de teclado."
+• Jobs emocionais: "Quero evitar o constrangimento e a ansiedade de ter o sistema travado enquanto um paciente com dor aguarda do outro lado do balcão."
+• Touchpoints: Tela de Login → Tela Inicial (Barra de Busca Universal) → Abertura de Modal de Novo Paciente (Admissão) → Preenchimento de campos essenciais navegando via 'Tab' → Botão "Admitir Paciente" (confirmação via teclado).
+
+• Persona: Dr. Carlos — Médico Plantonista Sobrecarregado
+Objetivo da jornada: Realizar o registro da evolução e a prescrição do paciente de forma linear e sem necessidade de múltiplos cliques ou abas.
+Jornadas a construir (MVP):
+• Evolução e Prescrição Médica V1
+• Jobs funcionais: "Preciso registrar evoluções clínicas e prescrever medicamentos em poucos cliques, utilizando atalhos de teclado e componentes visuais de busca rápida (Smart Chips)."
+• Jobs emocionais: "Quero sentir tranquilidade e foco exclusivo no cuidado clínico, eliminando a frustração de lidar com sistemas lentos e travamentos."
+• Touchpoints: Lista de Pacientes Aguardando/Admitidos → Abertura do Prontuário (Interface estruturada como thread) → Digitação da Evolução Clínica → Seleção de Medicamentos via Smart Chips → Botão "Assinar e Prescrever".
+
+• Persona: Juliana — Enfermeira Multi-tarefas
+Objetivo da jornada: Acessar e ler as prescrições médicas de forma clara e visualmente organizada para iniciar o cuidado sem ambiguidades.
+Jornadas a construir (MVP):
+• Leitura de Prescrição e Status do Paciente
+• Jobs funcionais: "Preciso ler a prescrição médica e os medicamentos registrados estruturados de forma organizada para planejar a administração na minha ala."
+• Jobs emocionais: "Quero sentir segurança absoluta ao ler os dados, minimizando o medo de erros causados por telas poluídas e confusas geradas pelo médico."
+• Touchpoints: Tela de Login → Visão de Lista de Pacientes Admitidos na Ala → Acesso à Thread do Paciente (Leitura da evolução e Smart Chips de medicamentos prescritos).
+
+• Persona: Fernando — Analista de TI "Apagador de Incêndios"
+Objetivo da jornada: Acessar a plataforma via nuvem em qualquer navegador e gerenciar a criação de perfis sem depender de instalações locais.
+Jornadas a construir (MVP):
+• Gestão Simplificada de Usuários e Acessos
+• Jobs funcionais: "Preciso acessar o sistema via nuvem e gerenciar acessos e permissões de usuários por meio de um painel administrativo web simplificado."
+• Jobs emocionais: "Quero sentir paz de espírito ao saber que o sistema é agnóstico de navegador, me sentindo livre do trabalho braçal de apagar incêndios em máquinas lentas."
+• Touchpoints: Acesso via URL no Navegador Padrão (Chrome/Edge/Firefox) → Dashboard do Administrador → Módulo de Gestão de Acesso → Formulário de Criação de Novo Usuário (Seleção de Perfil: Médico/Enfermeiro/Recepção) → Botão "Salvar Usuário".

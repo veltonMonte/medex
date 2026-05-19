@@ -1,0 +1,168 @@
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f2f5f9; 
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+
+.logo-container {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.logo-image {
+  max-width: 250px; 
+  height: auto;
+}
+
+
+.login-card {
+  background-color: #ffffff;
+  border-radius: 12px; 
+  width: 100%;
+  max-width: 480px;
+  padding: 40px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+
+.card-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: #62a5f5; 
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+
+.divider {
+  border: none;
+  border-top: 1px solid #e0e6ed;
+  margin-bottom: 30px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+
+.input-container {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 350px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 14px;
+  border-radius: 25px; 
+  background: transparent;
+  box-sizing: border-box;
+  outline: none;
+  color: #333;
+  transition: border-color 0.2s;
+}
+
+.input-field::placeholder {
+  color: #a0c4ff;
+  font-weight: 400;
+}
+
+.input-field:focus {
+  border: 2px solid #42a5f5;
+  padding: 13px 19px; 
+}
+
+.password-field {
+  padding-right: 45px; 
+}
+
+
+.password-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #42a5f5;
+  display: flex;
+  align-items: center;
+}
+
+
+.links-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.links-container a {
+  font-size: 13px;
+  color: #62a5f5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.links-container a:hover {
+  text-decoration: underline;
+}
+
+.pipe {
+  color: #c0d3eb;
+  font-size: 14px;
+}
+
+/* Botão */
+.action-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-primary {
+  background-color: #52a1ff; 
+  color: #ffffff;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 40px;
+  border-radius: 25px; 
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(82, 161, 255, 0.4); 
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-primary:hover {
+  background-color: #3b8cf0;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .login-card {
+    padding: 30px 20px;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: transparent; 
+  }
+  
+  .login-page {
+    background-color: #ffffff;
+  }
+}

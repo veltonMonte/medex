@@ -1,0 +1,181 @@
+1. História de Usuário Touchpoints: Prontuário do Paciente (Narrativa):
+• Como Dr. Carlos, o Médico Plantonista Sobrecarregado
+• Eu quero visualizar o histórico clínico do paciente estruturado em formato de thread (como e-mails) com botões e atalhos rápidos integrados
+• Para registrar evoluções clínicas e iniciar prescrições ou altas em poucos cliques, sem precisar navegar por múltiplas abas ou janelas.
+
+2. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• Título: Prontuário Clínico
+• Subtítulo: [Nome do Paciente] | [Idade] | Leito: [Número] | Classificação: [Cor/Risco]
+• Estrutura Visual Esperada (Otimizada para Mobile):
+  • Header Fixo (Topo): Barra superior condensada exibindo as informações vitais e *badges* de alerta (ex: "Alergia a Dipirona" destacado em vermelho). O botão de voltar à lista de pacientes fica à esquerda.
+  • Corpo da Tela (Visão Thread): Linha do tempo limpa mostrando a admissão e evoluções anteriores como *cards* expansíveis (semelhante ao histórico de mensagens de um e-mail longo). O registro mais recente fica expandido no topo ou no final da thread.
+  • Footer Fixo (Rodapé): Barra de ações rápidas, sempre visível (Sticky Footer), acessível na zona do polegar. Contém um botão primário grande "Prescrever/Evoluir (Atalho: P)" e um botão secundário "Alta Médica (Atalho: A)".
+
+3. Critérios de Aceitação (BDD — Behavior Driven Development):
+• Dado que seleciono um paciente na Lista de Pacientes (Visão tipo Inbox) e o sistema carrega o Prontuário do Paciente
+• Quando eu visualizo as informações da thread clínica e decido realizar uma nova ação médica
+• E clico no botão "Alta Médica" ou pressiono o atalho correspondente no teclado
+• Então o sistema deve expandir imediatamente o Painel de Resumo Consolidado na mesma tela de forma fluida (sem recarregar a página), permitindo a continuidade do trabalho sem travamentos.
+
+4. História de Usuário Touchpoints: Clique no atalho de Alta (Narrativa):
+• Como Dr. Carlos, o Médico Plantonista Sobrecarregado
+• Eu quero ter um botão de atalho de fácil acesso e suporte a comando de teclado diretamente na tela do prontuário
+• Para acionar a funcionalidade de alta médica instantaneamente, sem precisar navegar por menus ocultos ou abrir novas abas.
+
+5. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• Título: Prontuário Clínico
+• Subtítulo: [Nome do Paciente] | Ações Rápidas
+• Estrutura Visual Esperada (Otimizada para Mobile):
+  • Header Fixo (Topo): Permanece o cabeçalho com identificação do paciente e ícone de voltar.
+  • Corpo da Tela: O histórico clínico (thread) continua visível em background.
+  • Footer Fixo (Rodapé de Ações - Sticky Footer): Uma barra flutuante inferior contendo os principais botões de ação na zona de alcance do polegar (Thumb Zone). 
+  • Botão de Alta (Touchpoint): Um botão secundário de alto contraste (ex: contorno vermelho ou laranja sutil), com ícone representativo (ex: porta de saída ou check duplo) e o texto "Alta".
+  • Indicador de Atalho: Uma pequena tag visual ao lado do texto do botão indicando o atalho de teclado associado (ex: sublinhado no "A" ou badge "[Alt+A]"), garantindo que o usuário aprenda o fluxo *mouseless* rapidamente.
+
+6. Critérios de Aceitação (BDD — Behavior Driven Development):
+• Dado que estou com o Prontuário do Paciente aberto e tomei a decisão clínica de liberá-lo
+• Quando localizo a barra de ações rápidas no rodapé da interface
+• E clico no atalho "Alta" (ou pressiono a tecla de atalho correspondente no teclado)
+• Então o sistema deve interceptar o comando imediatamente, sem recarregar a página base, e deslizar o Painel de Resumo Consolidado sobre a tela atual, pronto para a revisão final.
+
+7. História de Usuário • Touchpoints: Painel de Resumo Consolidado (Narrativa):
+• Como Dr. Carlos, o Médico Plantonista Sobrecarregado
+• Eu quero visualizar um painel de resumo consolidado com o diagnóstico final, evolução e prescrição domiciliar em uma única tela
+• Para concluir altas médicas rapidamente revisando o quadro geral sem a necessidade de navegação por múltiplas abas, garantindo uma liberação ágil e segura.
+
+8. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• Título: Resumo de Alta Médica
+• Subtítulo: [Nome do Paciente] | [Idade] | Leito: [Número]
+• Estrutura Visual Esperada (Otimizada para Mobile):
+  • Header Fixo (Topo): Ícone de "X" (fechar) à esquerda, título centralizado e indicador de status verde ("Pronto para Alta").
+  • Card de Diagnóstico Principal (CID): Campo de texto com autocompletar e busca rápida, pré-preenchido com a hipótese diagnóstica da admissão, exibido visualmente como um *Smart Chip*.
+  • Área de Evolução Resumida: Um campo de texto amplo (Textarea) puxando automaticamente a última evolução registrada, editável para as orientações finais.
+  • Card de Prescrição Domiciliar: Lista em formato de tags ou *Smart Chips* com a medicação para casa. Inclui um campo de inserção rápida via teclado (ex: "Digitar medicamento e pressionar Enter").
+  • Footer Fixo (Rodapé): Botão de confirmação de leitura estrutural, fixo na parte inferior da tela, ao alcance do polegar.
+
+9. Critérios de Aceitação (BDD — Behavior Driven Development):
+• Dado que acionei o atalho de Alta Médica no prontuário e o painel sobreposto foi carregado na tela
+• Quando reviso as informações clínicas e preencho os dados complementares de orientações para casa ou CID final
+• E rolo a página validando que todos os dados essenciais estão consolidados nesta única visualização
+• Então o sistema deve manter a fluidez da tela sem engasgos, permitindo a leitura clara e a edição rápida dos campos antes de avançar para a confirmação final da alta.
+
+10. História de Usuário Touchpoints: Botão Confirmar Alta Médica (Narrativa):
+• Como Dr. Carlos, o Médico Plantonista Sobrecarregado
+• Eu quero um botão primário de confirmação de fácil alcance e com suporte a atalho de teclado (ex: Ctrl+Enter)
+• Para concluir altas médicas instantaneamente após a revisão do painel consolidado, efetivando a saída do paciente do sistema de forma segura e sem cliques adicionais.
+
+11. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• **Título/Área:** Rodapé de Ação do Painel de Alta
+• **Estrutura Visual Esperada (Otimizada para Mobile/Responsivo):**
+  • **Footer Fixo (Sticky Footer):** Uma barra inferior presa à base da tela, sempre visível independentemente da rolagem do painel de resumo, posicionada na zona de conforto do polegar (Thumb Zone).
+  • **Botão Primário (Call to Action):** Botão expansivo ocupando 100% da largura disponível no mobile (ou centralizado com grande destaque no desktop). Cor de confirmação (ex: verde ou azul primário do sistema).
+  • **Label (Texto):** "Confirmar Alta Médica" em fonte Roboto, negrito, com alto contraste.
+  • **Indicador Visual de Atalho:** Uma pequena tag ou subtítulo sutil dentro do botão informando o comando de teclado (ex: "[Ctrl+Enter]").
+
+12. Critérios de Aceitação (BDD — Behavior Driven Development):
+• Dado que preenchi e revisei todas as informações clínicas necessárias no Painel de Resumo Consolidado
+• Quando clico no botão "Confirmar Alta Médica" ou pressiono o atalho de teclado correspondente
+• E o sistema valida instantaneamente a assinatura digital ou credencial do usuário
+• Então o painel é fechado de forma fluida, o status do paciente é atualizado, sou redirecionado imediatamente para a Lista de Pacientes (Inbox) e recebo um aviso de confirmação rápida (Toast message) de que a alta foi concluída.
+
+13. História de Usuário Touchpoints: Lista de Pacientes Aguardando/Admitidos (Narrativa):
+• Como Dr. Carlos, o Médico Plantonista Sobrecarregado
+• Eu quero visualizar uma lista limpa, escaneável e com busca rápida dos pacientes aguardando atendimento
+• Para selecionar o próximo paciente e abrir seu prontuário instantaneamente, sem perder tempo procurando em telas poluídas.
+
+14. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• **Título da Tela:** Fila de Atendimento (Inbox)
+• **Subtítulo:** Pacientes Aguardando
+• **Estrutura Visual Esperada (Otimizada para Mobile):**
+  • **Header Fixo (Topo):** Barra de busca universal (estilo Gmail) ocupando a largura superior, com a instrução "Buscar paciente (Atalho: /)". Abaixo da busca, *chips* arredondados de filtro rápido (ex: "Todos", "Meus Pacientes", "Alta Urgência").
+  • **Corpo da Tela (Lista de Pacientes):** Layout estruturado como uma caixa de entrada de e-mails. Cada linha (card contínuo) representa um paciente e contém:
+    • Indicador visual circular à esquerda (Avatar) exibindo a cor da classificação de risco (Triagem).
+    • Nome do paciente em destaque (fonte escura e legível).
+    • Tempo de espera e resumo da queixa principal em fonte secundária e mais clara (imitando o *preview* do corpo de um e-mail).
+  • **Navegação Ágil:** A lista permite focar nos itens navegando para cima e para baixo com as setas do teclado, aplicando um sombreamento leve (hover/focus) no card selecionado.
+  • **Rodapé:** Sem elementos complexos, garantindo que a área útil máxima seja destinada à visualização da fila.
+
+15. Critérios de Aceitação (BDD — Behavior Driven Development):
+• Dado que acesso o sistema e caio na tela inicial de Fila de Atendimento
+• Quando localizo o próximo paciente visualmente ou utilizando os filtros/barra de busca
+• E clico no card do paciente ou pressiono a tecla "Enter" enquanto ele está focado
+• Então o sistema deve realizar a transição imediata para a tela de Prontuário do Paciente (visão thread), sem abrir novas abas ou janelas pop-up, de forma rápida e fluida.
+
+16. História de Usuário Touchpoints: Abertura do Prontuário (Interface estruturada como thread) (Narrativa):
+• Como Dr. Carlos, o Médico Plantonista Sobrecarregado
+• Eu quero abrir o prontuário do paciente e visualizar todo o histórico clínico e de prescrições estruturado de forma linear em uma única tela, semelhante a uma thread de e-mail
+• Para registrar a nova evolução clínica e iniciar a prescrição imediatamente, sem precisar navegar entre múltiplas abas ou dar cliques desnecessários buscando informações fragmentadas.
+
+17. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• **Título da Tela:** Prontuário - [Nome do Paciente]
+• **Subtítulo:** Idade | Peso | Leito | Classificação de Risco (Cor)
+• **Estrutura Visual Esperada (Otimizada para Mobile):**
+  • **Header Fixo (Topo):** Ícone de seta "Voltar" à esquerda, resumo de dados vitais do paciente e *badges* visuais de alerta (ex: "Alérgico a Penicilina" em vermelho).
+  • **Histórico Clínico (Visão Thread):** Área central rolável exibindo os atendimentos, evoluções e prescrições anteriores recolhidos em formato de *cards* expansíveis (como mensagens antigas em uma thread do Gmail). O histórico mais recente fica no final da rolagem, logo acima da área de nova inserção.
+  • **Área de Nova Evolução:** Imediatamente abaixo da thread, um campo de texto em branco (Textarea) limpo, sem bordas pesadas, com o *placeholder* "Digite a evolução clínica...".
+  • **Foco Automático:** Ao abrir a tela, o teclado do dispositivo (ou cursor no desktop) já deve estar ativado no campo de "Nova Evolução", permitindo digitação imediata.
+
+18. Critérios de Aceitação (BDD — Behavior Driven Development):
+• Dado que selecionei um paciente na lista da Fila de Atendimento
+• Quando o sistema conclui o carregamento do Prontuário do Paciente
+• E exibe a interface estruturada em formato de thread vertical
+• Então a tela deve focar automaticamente no campo de texto da nova evolução e exibir os registros clínicos anteriores logo acima, permitindo que eu comece a trabalhar imediatamente sem cliques extras.
+
+19. História de Usuário Touchpoints: Digitação da Evolução Clínica (Narrativa):
+• Como Dr. Carlos, o Médico Plantonista Sobrecarregado
+• Eu quero um campo de texto expansível, limpo e com foco automático imediato (auto-focus) ao abrir a tela
+• Para registrar a evolução clínica do paciente de forma rápida, contínua e sem distrações ou perda de dados em caso de fechamento acidental.
+
+20. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• **Título da Seção:** Nova Evolução
+• **Estrutura Visual Esperada (Otimizada para Mobile):**
+  • **Container da Evolução:** Um bloco visual com fundo branco (estilo "Compose" do Gmail) posicionado logo abaixo do histórico clínico.
+  • **Campo de Entrada Principal (Textarea):** Caixa de texto sem bordas rígidas, que se auto-expande verticalmente conforme o texto aumenta, evitando barras de rolagem internas (scroll) que prejudicam a usabilidade no mobile.
+  • **Placeholder e Tipografia:** Texto de preenchimento invisível focado em clareza, como "Digite a evolução clínica do paciente...", com fonte Roboto tamanho 16px para garantir legibilidade sem zoom no celular.
+  • **Indicador de Salvamento Automático (Autosave):** Texto sutil no canto superior direito do bloco (ex: "Salvando rascunho..."), oferecendo segurança de que o texto não será perdido.
+  • **Estado de Foco (Active State):** Uma sutil linha azul na base do campo para indicar claramente onde o cursor está ativo.
+
+21. Critérios de Aceitação (BDD — Behavior Driven Development):
+• Dado que o prontuário do paciente foi aberto e a tela carregada com sucesso
+• Quando clico na área de texto ou inicio a digitação diretamente através do foco automático
+• E digito textos longos com pausas frequentes
+• Então o campo deve se expandir suavemente para baixo acomodando o texto sem "engasgos", e o sistema deve salvar o conteúdo como rascunho em background a cada pausa de 2 segundos, exibindo um discreto indicador de "Salvo".
+
+22. História de Usuário Touchpoints: Seleção de Medicamentos via Smart Chips (Narrativa):
+• Como Dr. Carlos, o Médico Plantonista Sobrecarregado
+• Eu quero buscar medicamentos em um campo de preenchimento automático ágil que converta as seleções instantaneamente em blocos visuais interativos (Smart Chips)
+• Para prescrever múltiplos itens rapidamente utilizando atalhos de teclado, garantindo clareza na dosagem e mantendo a tela organizada sem a necessidade de abrir novas janelas.
+
+23. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• **Título da Seção:** Prescrição
+• **Estrutura Visual Esperada (Otimizada para Mobile/Responsivo):**
+  • **Campo de Busca Ágil:** Input de texto proeminente com ícone de lupa e o *placeholder* "Adicionar medicamento... (Atalho: Ctrl+M)". Deve suportar foco via teclado.
+  • **Dropdown de Auto-complete:** Lista suspensa sobreposta que surge instantaneamente após a 2ª letra digitada, exibindo o princípio ativo em destaque e a apresentação (ex: mg/ml) em fonte secundária para evitar erros médicos.
+  • **Área de Smart Chips (Canvas de Prescrição):** Container limpo logo abaixo da busca onde as medicações selecionadas são renderizadas como *cards* horizontais arredondados (Smart Chips).
+  • **Estrutura Interna do Smart Chip:** Cada chip exibe o nome do fármaco e acopla mini-seletores (dropdowns embutidos ou botões + / -) para definir "Dose", "Via" (ex: VO, EV) e "Frequência" (ex: 8/8h). Inclui um ícone de "X" na extremidade direita com área de toque ampliada (touch target) para exclusão fácil no mobile.
+
+24. Critérios de Aceitação (BDD — Behavior Driven Development):
+• Dado que o cursor está focado no campo de busca de medicamentos na área de prescrição
+• Quando digito as iniciais de um fármaco, navego com as setas do teclado (ou toco no mobile) e seleciono o medicamento correto
+• E pressiono a tecla "Enter" (ou confirmo o toque na tela)
+• Então o sistema deve adicionar imediatamente a medicação como um "Smart Chip" na área abaixo, limpar automaticamente o texto da barra de busca e manter o cursor ativo nela, permitindo a inserção imediata e contínua do próximo item da receita.
+
+25. História de Usuário Touchpoint: Botão "Assinar e Prescrever" (Narrativa):
+• Como Dr. Carlos, o Médico Plantonista Sobrecarregado
+• Eu quero utilizar um botão de ação principal fixo e de fácil alcance, com suporte a atalho de teclado direto (ex: Ctrl+Enter)
+• Para concluir e assinar digitalmente a evolução e a prescrição do paciente em um único comando, finalizando o atendimento rapidamente e sem risco de travamentos.
+
+26. Detalhes da Tela (Informações na tela e Protótipo Conceitual):
+• **Título/Área:** Rodapé de Ação do Prontuário (Sticky Footer)
+• **Estrutura Visual Esperada (Otimizada para Mobile/Responsivo):**
+  • **Barra Fixa Inferior:** Uma barra de ações ancorada na base da tela (Sticky Footer), sempre visível independentemente da rolagem do conteúdo acima, mantendo-se na zona de conforto do polegar (Thumb Zone) no celular.
+  • **Botão Primário (Call to Action):** Botão expansivo ocupando toda a largura disponível (100% no mobile), com cor de destaque principal do sistema (ex: azul ou verde) e alto contraste.
+  • **Label (Texto):** "Assinar e Prescrever" em fonte Roboto, peso Bold.
+  • **Indicador de Atalho:** Uma tag visual sutil ou texto secundário dentro do botão informando o comando rápido de teclado (ex: "[Ctrl + Enter]"), incentivando o uso contínuo sem mouse.
+  • **Feedback de Interação (Microinteração):** Ao ser clicado ou acionado, o botão deve exibir um ícone de carregamento interno (spinner) para indicar o processamento, sem bloquear ou escurecer abruptamente o restante da tela.
+
+27. Critérios de Aceitação (BDD — Behavior Driven Development):
+• Dado que finalizei a digitação da evolução clínica e a inserção dos medicamentos via Smart Chips no prontuário do paciente
+• Quando clico no botão primário "Assinar e Prescrever" ou pressiono o atalho de teclado correspondente
+• E o sistema processa a validação da assinatura digital e o salvamento das informações em background
+• Então o sistema deve anexar instantaneamente o novo registro à thread clínica do paciente sem recarregar a página base, exibindo uma notificação visual de sucesso (Toast message verde) e mantendo a interface livre para a próxima ação ou paciente.

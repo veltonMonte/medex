@@ -1,0 +1,90 @@
+@import '../TelaPaciente/TelaPacientes.css';
+
+/* Estrutura Principal */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    height: 64px;
+    background: white;
+    border-bottom: 1px solid #dadce0;
+}
+
+.top-bar-right { display: flex; align-items: center; }
+.status-medico { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #5f6368; font-weight: 600; }
+.dot-online { width: 10px; height: 10px; background: #1e8e3e; border-radius: 50%; }
+
+.fila-header-main { display: flex; justify-content: space-between; align-items: center; margin: 30px 0; }
+.btn-chamar-proximo { 
+    background: #1a73e8; 
+    color: white; 
+    border: none; 
+    padding: 12px 20px; 
+    border-radius: 8px; 
+    font-weight: 600; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    transition: 0.2s;
+}
+.btn-chamar-proximo:hover { background: #1557b0; }
+
+/* Grid de Cards */
+.cards-fila-container { display: flex; flex-direction: column; gap: 16px; width: 100%; }
+
+.card-fila-medica {
+    background: white;
+    border: 1px solid #dadce0;
+    border-radius: 12px;
+    display: flex;
+    overflow: hidden;
+    min-height: 110px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    transition: 0.2s;
+}
+.card-fila-medica:hover { border-color: #bdc1c6; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+
+.card-barra-lateral { width: 10px; flex-shrink: 0; }
+
+/* Cores das Barras e Bordas */
+.bg-color-vermelho { background-color: #d93025; }
+.bg-color-laranja { background-color: #f29900; }
+.bg-color-amarelo { background-color: #fbbc04; }
+.bg-color-verde { background-color: #1e8e3e; }
+.bg-color-azul { background-color: #1a73e8; }
+
+.b-color-vermelho { border-left: 1px solid #d93025; }
+.b-color-laranja { border-left: 1px solid #f29900; }
+
+/* Conteúdo do Card */
+.card-fila-info { flex: 1; padding: 20px; }
+.info-topo { display: flex; align-items: center; gap: 15px; margin-bottom: 5px; }
+.nome-paciente-fila { margin: 0; font-size: 18px; color: #202124; font-weight: 700; }
+
+/* Estilo das Tags Manchester - Igual à imagem (Cores Soft para gravidade alta) */
+.tag-manchester {
+    font-size: 11px;
+    font-weight: 900;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.tag-vermelho { background: #fce8e6; color: #d93025; } /* Fundo claro, letra escura */
+.tag-laranja { background: #feefe3; color: #e27200; } /* Fundo claro, letra escura */
+.tag-amarelo { background: #fbbc04; color: white; } 
+.tag-verde { background: #1e8e3e; color: white; }
+.tag-azul { background: #1a73e8; color: white; }
+
+.motivo-fila { font-size: 14px; color: #5f6368; margin: 5px 0 10px 0; }
+.meta-fila { display: flex; gap: 20px; font-size: 12px; color: #80868b; }
+
+/* Ações */
+.card-fila-acoes { display: flex; align-items: center; gap: 10px; padding: 0 25px; background: #f8f9fa; border-left: 1px solid #eee; }
+.btn-chamada, .btn-atendimento { padding: 9px 15px; border-radius: 6px; font-size: 13px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: 0.2s; }
+.btn-chamada { background: white; border: 1px solid #dadce0; color: #3c4043; }
+.btn-chamada:hover { background: #f1f3f4; }
+.btn-atendimento { background: #1a73e8; color: white; border: none; }
+.btn-atendimento:hover { background: #1557b0; }
