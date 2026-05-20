@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import logo from './img/logo192.png'; 
+import logo from './img/logo192.png';
 import './telaLogin.css';
 
 function Login() {
@@ -32,15 +32,15 @@ function Login() {
 
     const lidarComLogin = (e) => {
         e.preventDefault();
-        
+
         const usuarioValidado = usuariosPermitidos.find(
             u => u.usuario === credenciais.usuario.toLowerCase() && u.senha === credenciais.senha
         );
 
         if (usuarioValidado) {
-            // Salva a sessão no navegador para uso em outras telas
+            // Salva a sessão no navegador para use em outras telas
             localStorage.setItem('fortalmed_user', JSON.stringify(usuarioValidado));
-            
+
             // REDIRECIONAMENTO POR PERFIL
             switch (usuarioValidado.perfil) {
                 case 'Recepção':
@@ -73,37 +73,36 @@ function Login() {
             </div>
 
             <div className="login-card">
-                <h1 className="card-title">Faça seu Login!</h1>
+                <h1 className="card-title">FortalMed <span style={{color: 'var(--primary)'}}>SISTEMA</span></h1>
                 <hr className="divider" />
 
                 <form className="form-container" onSubmit={lidarComLogin}>
                     <div className="input-container">
-                        <input 
-                            type="text" 
+                        <input
+                            type="text"
                             name="usuario"
-                            className="input-field" 
-                            placeholder="Digite seu usuário" 
+                            className="input-field"
+                            placeholder="Usuário"
                             value={credenciais.usuario}
                             onChange={lidarComMudanca}
                             ref={inputUsuarioRef}
                             required
                         />
                     </div>
-                    
+
                     <div className="input-container">
-                        <input 
-                            type={mostrarSenha ? "text" : "password"} 
+                        <input
+                            type={mostrarSenha ? "text" : "password"}
                             name="senha"
-                            className="input-field password-field" 
-                            placeholder="Digite sua senha" 
+                            className="input-field password-field"
+                            placeholder="Senha"
                             value={credenciais.senha}
                             onChange={lidarComMudanca}
                             required
                         />
-                        <span 
-                            className="password-icon" 
+                        <span
+                            className="password-icon"
                             onClick={() => setMostrarSenha(!mostrarSenha)}
-                            style={{ cursor: 'pointer' }}
                         >
                             {mostrarSenha ? (
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -118,8 +117,8 @@ function Login() {
                             )}
                         </span>
                     </div>
-                    
-                    {erro && <div style={{ color: '#d93025', fontSize: '13px', textAlign: 'center', marginBottom: '10px', fontWeight: '500' }}>{erro}</div>}
+
+                    {erro && <div style={{ color: '#ef4444', fontSize: '13px', textAlign: 'center', marginBottom: '10px', fontWeight: '600' }}>{erro}</div>}
 
                     <div className="links-container">
                         <a href="#">Esqueceu a senha?</a>

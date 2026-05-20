@@ -1,50 +1,52 @@
-
 .login-page {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #f2f5f9; 
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--background);
+  padding: 20px;
 }
 
-
 .logo-container {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
 .logo-image {
-  max-width: 250px; 
+  max-width: 220px;
   height: auto;
+  filter: drop-shadow(0 10px 15px rgba(14, 165, 233, 0.2));
 }
-
 
 .login-card {
-  background-color: #ffffff;
-  border-radius: 12px; 
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
   width: 100%;
-  max-width: 480px;
-  padding: 40px;
+  max-width: 420px;
+  padding: 48px;
   box-sizing: border-box;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
 }
-
 
 .card-title {
-  font-size: 24px;
-  font-weight: 500;
-  color: #62a5f5; 
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-main);
   text-align: center;
-  margin: 0 0 20px 0;
+  margin: 0 0 32px 0;
+  letter-spacing: -0.5px;
 }
 
+.card-title span {
+  color: var(--primary);
+}
 
 .divider {
   border: none;
-  border-top: 1px solid #e0e6ed;
-  margin-bottom: 30px;
+  border-top: 1px solid var(--border);
+  margin-bottom: 32px;
 }
 
 .form-container {
@@ -54,78 +56,82 @@
   width: 100%;
 }
 
-
 .input-container {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   width: 100%;
   max-width: 350px;
 }
 
 .input-field {
   width: 100%;
-  padding: 14px 20px;
-  font-size: 14px;
-  border-radius: 25px; 
-  background: transparent;
+  padding: 16px 20px;
+  font-size: 15px;
+  border-radius: var(--radius-md);
+  background: var(--background);
+  border: 1px solid var(--border);
   box-sizing: border-box;
   outline: none;
-  color: #333;
-  transition: border-color 0.2s;
+  color: var(--text-main);
+  transition: all 0.2s ease;
+  font-family: inherit;
 }
 
 .input-field::placeholder {
-  color: #a0c4ff;
-  font-weight: 400;
+  color: #94a3b8;
 }
 
 .input-field:focus {
-  border: 2px solid #42a5f5;
-  padding: 13px 19px; 
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-light);
+  background: white;
 }
 
 .password-field {
-  padding-right: 45px; 
+  padding-right: 48px;
 }
-
 
 .password-icon {
   position: absolute;
-  right: 15px;
+  right: 16px;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  color: #42a5f5;
+  color: var(--text-muted);
   display: flex;
   align-items: center;
+  transition: color 0.2s;
 }
 
+.password-icon:hover {
+  color: var(--primary);
+}
 
 .links-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 30px;
+  gap: 12px;
+  margin-bottom: 32px;
 }
 
 .links-container a {
-  font-size: 13px;
-  color: #62a5f5;
+  font-size: 14px;
+  color: var(--primary);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  transition: color 0.2s;
 }
 
 .links-container a:hover {
-  text-decoration: underline;
+  color: var(--primary-dark);
 }
 
 .pipe {
-  color: #c0d3eb;
+  color: var(--border);
   font-size: 14px;
 }
 
-/* Botão */
 .action-buttons {
   width: 100%;
   display: flex;
@@ -133,36 +139,37 @@
 }
 
 .btn-primary {
-  background-color: #52a1ff; 
-  color: #ffffff;
+  background-color: var(--primary);
+  color: white;
   border: none;
   font-size: 16px;
-  font-weight: 500;
-  padding: 12px 40px;
-  border-radius: 25px; 
+  font-weight: 700;
+  padding: 16px 48px;
+  border-radius: var(--radius-md);
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(82, 161, 255, 0.4); 
-  transition: background-color 0.2s, transform 0.1s;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+  transition: all 0.2s ease;
 }
 
 .btn-primary:hover {
-  background-color: #3b8cf0;
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(14, 165, 233, 0.4);
 }
 
 .btn-primary:active {
   transform: scale(0.98);
 }
 
-/* Responsividade */
 @media (max-width: 600px) {
   .login-card {
-    padding: 30px 20px;
-    border-radius: 0;
+    padding: 32px 24px;
     box-shadow: none;
-    background-color: transparent; 
+    background-color: transparent;
+    border: none;
   }
-  
+
   .login-page {
-    background-color: #ffffff;
+    background-color: white;
   }
 }
